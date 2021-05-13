@@ -1,0 +1,208 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.checkout-steps {
+    width  : 68.0rem;
+    margin : 0 0 3.0rem 0;
+
+    @media all and ( max-width : $bp-620 ) {
+        display : none;
+        // width : 100%;
+        // margin : 0 0 0 0;
+    }
+
+    &--ul {
+        display : inline-block;
+
+        &--li {
+            display : inline;
+            
+            // this targets our active Link component
+            > a  {
+                display  : block;
+                float    : left;
+                position : relative;  
+                height   : 7.2rem;
+                margin   : 0 1.0rem 0 0;
+                padding  : 2.2rem 2.0rem 0 6.0rem; // I went with padding-top of 22px since it moved
+                // text up a little and centered the text a little better ( remember initially
+                // I had 24px above the text, 24px text and 24px below the text )
+                      
+                font-family : $font-primary-1;
+                font-size   : 1.8rem;
+                font-weight : 300;
+                color       : $gray-800;
+
+                // background-color : rgba( 243, 245, 250, 1 );
+                // background-color : rgba( 227, 240, 250, 1 );
+                // background-color : rgba( 223, 239, 253, 1 );
+                // background-color : rgba( 217, 233, 248, 1 );
+                background-color : rgba( 210, 227, 243, 1 );
+                // background-color : rgba( 204, 226, 247, 1 );
+
+                @media all and ( max-width : $bp-620 ) {
+                    // display : none;
+                    // height  : auto;
+                    // margin  : 0 0 0 0;
+                    // padding : 1.0rem 0.3rem;
+
+                    // border-right : 1px solid rgba( 180, 180, 180, 1 );
+
+                    // color : $blue-webkit-link;
+
+                    // background-color : $white;
+
+                }
+            }
+
+            > a:before  {
+                position : absolute;
+                top      : 0;
+                left     : 0;
+
+                border-top    : 3.6rem solid transparent;
+                border-left   : 3.6rem solid rgba( 255, 255, 255, 1 );
+                border-bottom : 3.6rem solid transparent;
+
+                content : "";
+
+                @media all and ( max-width : $bp-620 ) {
+                    // border-top    : none;
+                    // border-left   : none;
+                    // border-bottom : none;
+                }
+            }
+
+            > a:after  {
+                position : absolute;
+                top      : 0;
+                right    : -3.6rem;
+                z-index  : 1;
+
+                border-top    : 3.6rem solid transparent;
+                // border-left   : 36px solid rgba( 243, 245, 250, 1 );
+                // border-left   : 36px solid rgba( 227, 240, 250, 1 );
+                // border-left   : 36px solid rgba( 223, 239, 253, 1 );
+                // border-left   : 36px solid rgba( 217, 233, 248, 1 );
+                border-left   : 3.6rem solid rgba( 210, 227, 243, 1 );
+                // border-left   : 36px solid rgba( 204, 226, 247, 1 );
+                border-bottom : 3.6rem solid transparent;
+
+                content : "";
+
+                @media all and ( max-width : $bp-620 ) {
+                    // border-top    : none;
+                    // border-left   : none;
+                    // border-bottom : none;
+                }
+            }
+            
+            // this targets our inactive anchor tag
+            > a.disabled  {
+                display  : block;
+                float    : left;
+                position : relative;
+                height   : 7.2rem;
+                margin   : 0 1.0rem 0 0;
+                padding  : 2.2rem 2.0rem 0 6.0rem; // I went with padding-top of 22px since it moved
+                // text up a little and centered the text a little better ( remember initially
+                // I had 24px above the text, 24px text and 24px below the text )
+                      
+                font-family : $font-primary-1;
+                font-size   : 1.8rem;
+                font-weight : 300;
+                color       : $gray-800;
+                text-align  : center;
+
+                background-color : rgba( 243, 245, 250, 1 );
+
+                @media all and ( max-width : $bp-620 ) {
+                    // display : none;
+                    // height  : auto;
+                    // margin  : 0 0 0 0;
+                    // padding : 1.0rem 0.3rem;
+
+                    // border-right : 1px solid rgba( 180, 180, 180, 1 );
+
+                    // background-color : $white;
+                }
+            }
+
+            // keep the right triangle the same color as the block
+            > a.disabled:after  {
+                position : absolute;
+                top      : 0;
+                right    : -3.6rem;
+                z-index  : 1;
+
+                border-top    : 3.6rem solid transparent;
+                border-left   : 3.6rem solid rgba( 243, 245, 250, 1 );
+                border-bottom : 3.6rem solid transparent;
+
+                content : "";
+
+                @media all and ( max-width : $bp-620 ) {
+                    // border-top    : none;
+                    // border-left   : none;
+                    // border-bottom : none;
+                }
+            }
+
+            // align the icon fonts
+            > a > .fas {
+                vertical-align: -1.0rem;
+            }
+
+            > a > .fa-shopping-cart {
+                vertical-align: 0.0rem;
+            }
+
+        }
+
+        // round the corners on the first anchor tag
+        &--li:first-child a {
+            padding : 2.2rem 3.0rem 0 5.0rem; // changed the padding since it made the text center better
+
+            border-top-left-radius    : 1.0rem;
+            border-bottom-left-radius : 1.0rem;
+
+            @media all and ( max-width : $bp-620 ) {
+                // height  : auto;
+                // margin  : 0 0 0 0;
+                // padding : 1.0rem 0.5rem;
+            }
+        }
+
+        // this will remove the arrow on the first child
+        &--li:first-child a:before {
+            display : none;
+
+            @media all and ( max-width : $bp-620 ) {
+                // display : block;
+            }
+        }
+
+        // round the corners on the last anchor tag
+        &--li:last-child a {
+            padding : 2.2rem 3.0rem 0 6.0rem; // changed the padding since it made the text center better
+
+            border-top-right-radius    : 1.0rem;
+            border-bottom-right-radius : 1.0rem;
+
+            @media all and ( max-width : $bp-620 ) {
+                // height  : auto;
+                // margin  : 0 0 0 0;
+                // padding : 1.0rem 0.5rem;
+            }
+        }
+
+        // this will remove the arrow on the last child
+        &--li:last-child a:after {
+            display : none;
+        }
+
+    }
+}
+

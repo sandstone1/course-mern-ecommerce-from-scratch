@@ -1,0 +1,47 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.form-textarea--container {
+
+    position : relative;
+    margin   : 2.5rem 0 4.5rem 0;
+
+    &--label {
+
+        display : block;
+        margin  : 0 0 1.0rem 0;
+
+        font-family : $font-primary-1;
+        font-size   : 1.6rem;
+        font-weight : 400;
+        color       : $gray-650;
+
+        pointer-events : none;
+
+    } // end of label
+
+    &--textarea {
+
+        display : block;
+        width   : 100%;
+        padding : 1.0rem;
+
+        border : 1px solid $gray-650;
+
+        font-family : $font-primary-1;
+        font-size   : 1.6rem;
+        font-weight : 300;
+        color       : $gray-800;
+
+        background-color : rgb( 255, 255, 255);
+
+        &:focus {
+            outline : none;
+        }
+
+    } // end of textarea
+
+} // end of form textarea container
+

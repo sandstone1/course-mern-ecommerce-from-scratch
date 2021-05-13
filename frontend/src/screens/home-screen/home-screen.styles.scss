@@ -1,0 +1,91 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+.home-screen {
+
+    display               : grid;
+    grid-template-rows    : repeat( 2, min-content );
+    grid-template-columns : 1fr;
+    margin                : 3.0rem 0 3.0rem 0;
+
+    // back to home page button
+    &--button {
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row    : 1 / 2;
+            grid-column : 1 / -1;
+
+        }
+
+        &--home-link {
+
+            @include button();
+            display : inline-block; // this makes the margins behave appropriately
+            margin  : 0 0 6.0rem 0;
+
+            color          : $black;
+            letter-spacing : 0.5px; 
+
+            background-image: $gray-gradient-right;
+
+            transition : all 0.3s ease-out;
+
+            &:hover {
+
+                background-image: $gray-gradient-right-hover;
+
+            }
+
+        } // end of home link
+
+    } // end of button
+
+    &--title {
+
+        margin : 0 0 1.0rem 0;
+
+        font-family    : $font-primary-1;
+        // want to keep the font weight at 300 and the browser defaults to bold on
+        // h1 elements
+        font-size      : 3.2rem;
+        font-weight    : 300;
+        color          : $gray-800;
+        letter-spacing : 2px;
+        text-align     : left;
+
+    } // end of title
+
+    &--products {
+
+        display               : grid;
+        grid-template-rows    : repeat( 2, min-content );
+        grid-template-columns : repeat( 3, 1fr );
+        grid-gap              : 3.0rem 3.0rem;
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-template-rows    : repeat( 3, min-content );
+            grid-template-columns : repeat( 2, 1fr );
+            grid-gap              : 3.0rem 4.0rem;
+    
+        }
+
+        @media all and ( max-width : $bp-620 ) {
+
+            grid-template-rows    : repeat( 6, min-content );
+            grid-template-columns : 1fr;
+            grid-gap              : 3.0rem 0.0rem;
+
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-gap : 1.0rem 0.0rem;
+
+        }
+
+    } // end of products
+
+} // end of home screen

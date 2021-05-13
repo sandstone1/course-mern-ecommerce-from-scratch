@@ -1,0 +1,68 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.register-screen {
+
+    display               : grid;
+    grid-template-rows    : auto;
+    grid-template-columns : 380px;
+    justify-content       : center;
+    margin                : 4.0rem 0;
+
+    @media all and ( max-width : $bp-480 ) {
+
+        grid-template-columns : 1fr;
+
+    }
+
+    &--title {
+
+        margin : 1.0rem 0 2.0rem 0;
+
+        font-family    : $font-primary-1;
+        font-size      : 3.2rem;
+        font-weight    : 300;
+        color          : $gray-800;
+        letter-spacing : 2px;
+
+    } // end of title
+
+    &--form {
+
+        &--button-container {
+
+            display  : grid;
+
+            &--button {
+                @include button();
+                display : block; // this makes the button span the element
+                margin  : 1.0rem 0 0 0;
+    
+                letter-spacing : 1px;
+
+            }
+
+        }
+
+    } // end of form
+
+    &--sign-in {
+
+        margin  : 2.5rem 0 0 0;
+
+        font-family    : $font-primary-1;
+        font-size      : 1.6rem;
+        font-weight    : 300;
+        color          : $gray-800;
+
+    } // end of sign-in
+
+} // end of register screen
+
+
+// modify the error message styles
+.error-message-container {
+    margin : 1.0rem 0 3.0rem 0;
+}

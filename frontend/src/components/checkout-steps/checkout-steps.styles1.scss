@@ -1,0 +1,37 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.checkout-steps {
+    width  : 600px;
+    margin : 0 0 3.0rem 0;
+
+    &--ul {
+        display               : grid;
+        grid-template-rows    : auto;
+        grid-template-columns : repeat( 4, 1fr );
+        justify-content       : space-between;   
+
+        // this targets our active Link component
+        &--li > a  {
+            margin : 1.0rem 0 2.0rem 0;
+    
+            font-family    : $font-primary-1;
+            font-size      : 1.8rem;
+            font-weight    : 300;
+            color          : $gray-800;
+        }
+    
+        // this targets our inactive anchor tag
+        &--li > a.disabled  {
+            margin : 1.0rem 0 2.0rem 0;
+    
+            font-family    : $font-primary-1;
+            font-size      : 1.8rem;
+            font-weight    : 300;
+            color          : $gray-600;
+        }
+    }
+}
+

@@ -1,0 +1,15 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.fa-star, .fa-star-half-alt {
+    margin : 0.1rem;
+
+    color : $yellow-300;
+}
+
+.rating-text {
+    margin : 0 0 0 0.6rem;
+}
+

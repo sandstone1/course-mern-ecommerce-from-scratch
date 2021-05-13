@@ -1,0 +1,141 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.nav-bar-dropdown-user-container {
+
+    display               : block;
+    position              : absolute;
+    top                   : 80px;
+    z-index               : 5;
+    width                 : 180px;
+    height                : 180px;
+    overflow-y            : scroll;
+    padding               : 2.0rem 2.0rem;
+
+    // border     : 1px solid rgba( 211, 211, 211, 1 );
+    // box shadow is from " https://css-tricks.com/almanac/properties/b/box-shadow/ "
+    box-shadow :
+        0 2.8px 2.2px rgba( 0, 0, 0, 0.034 ),
+        0 6.7px 5.3px rgba( 0, 0, 0, 0.048 ),
+        0 12.5px 10px rgba( 0, 0, 0, 0.06 ),
+        0 22.3px 17.9px rgba( 0, 0, 0, 0.072 ),
+        0 41.8px 33.4px rgba( 0, 0, 0, 0.086 ),
+        0 100px 80px rgba( 0, 0, 0, 0.12 )
+    ;
+
+    background : linear-gradient( 90deg, rgba( 61, 66, 84, 1 ) 0%, rgba( 61, 66, 77, 1 ) 50%, rgba( 61, 66, 84, 1 ) 100% );
+
+    // transform : translate( calc( ( -180px + 121.89px ) / 2 ), 0 );
+    transform : translate( -44px, 0 );
+
+    @media all and ( max-width : $bp-1280 ) {
+
+        top : 100px;
+
+        background : linear-gradient( 90deg, rgba( 61, 66, 80, 1 ) 0%, rgba( 61, 61, 70, 1 ) 50%, rgba( 61, 66, 80, 1 ) 100% );
+
+        transform : translate( -68px, 0 );
+
+    }
+
+    &--ul {
+
+        display               : grid;
+        grid-template-rows    : auto auto;
+        grid-template-columns : auto;
+        align-content         : space-around;
+        justify-content       : center;
+        height                : 100%; // needed height in order for align-content : space-around; to work
+
+        @media all and ( max-width : $bp-1280 ) {
+
+            align-content : center;
+            grid-gap      : 2.6rem 0;
+    
+        }
+
+        // profile link
+        &--profile > a {
+            display : block;
+            padding : 1.5rem 2.0rem;
+
+            font-family    : $font-display-2;
+            font-size      : 1.4rem;
+            color          : $gray-200;
+            text-transform : uppercase;
+            letter-spacing : 1px;
+
+            transition : all 0.2s ease-out;            
+        }
+
+        // profile link - hover and active selectors
+        &--profile > a:hover, &--profile > a:active {
+
+            // color : $cyan-200;
+            background-color : rgba( 255, 255, 255, 0.05 );
+
+            // move the background color up just a little to add a nice hoover effect
+            transform: translate3d( 0, -3px, 0);
+
+        }
+
+        // admin user list link
+        &--admin-user-list > a {
+            display : block;
+            padding : 1.5rem 2.0rem;
+
+            font-family    : $font-display-2;
+            font-size      : 1.4rem;
+            color          : $gray-200;
+            text-transform : uppercase;
+            letter-spacing : 1px;
+
+            transition : all 0.2s ease-out;            
+        }
+
+        // logout link element
+        &--logout > a {
+
+            display : block;
+            padding : 1.5rem 2.0rem;
+
+            font-family    : $font-display-2;
+            font-size      : 1.4rem;
+            color          : $gray-200;
+            text-transform : uppercase;
+            letter-spacing : 1px;            
+
+            cursor : pointer;
+
+            transition : all 0.2s ease-out;
+
+        }
+
+        // logout link element - hover and active selectors
+        &--logout > a:hover, &--logout > a:active {
+
+            // color : $cyan-200;
+            background-color : rgba( 255, 255, 255, 0.05 );
+
+            // move the background color up just a little to add a nice hoover effect
+            transform: translate3d( 0, -3px, 0);
+        }
+
+    }
+
+}
+
+.nav-bar-dropdown-user-container.admin {
+
+    // transform : translate( calc( ( -180px + 121.89px ) / 2 ), 0 );
+    transform : translate( -33px, 0 );
+
+    @media all and ( max-width : $bp-1280 ) {
+
+        transform : translate( -54px, 0 );
+
+    }
+
+}

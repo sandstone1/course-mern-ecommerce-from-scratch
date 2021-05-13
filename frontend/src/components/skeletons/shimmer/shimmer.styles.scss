@@ -1,0 +1,38 @@
+
+
+// let's add the shimmer animation below and in order to position shimmer-wrapper absolute we
+// need to position the parent div or skeleton-wrapper relative
+.shimmer-wrapper {
+    position : absolute;
+    top      : 0;
+    left     : 0;
+    width    : 100%;
+    height   : 100%;
+
+    animation : loadingShimmer 0.5s infinite;
+}
+
+.shimmer {
+    width  : 50%;
+    height : 100%;
+
+    box-shadow : 0 0 30px 30px rgba( 255, 255, 255, 0.05 ); // h-offset, v-offset, blur, spread,
+    // color and this will soften the edges of the shimmer
+
+    background : rgba( 255, 255, 255, 0.2 );
+
+    transform : skewX( -20deg );
+}
+
+// next, let's create a keyframe animation that produces the shimmer animation effect
+@keyframes loadingShimmer {
+    0% { 
+        transform : translateX( -50% );
+    }
+    50% { 
+        transform : translateX( 0% );
+    }
+    100% { 
+        transform : translateX( 50% );
+    }
+}

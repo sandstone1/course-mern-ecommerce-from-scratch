@@ -1,0 +1,83 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.search-box {
+
+    @media all and ( max-width : $bp-1280 ) {
+
+        display : none;
+
+    }
+
+    &--form {
+
+        display               : grid;
+        grid-template-columns : 1fr 1fr;
+        align-items           : center;
+
+        > input {
+
+            padding : 0.90rem 2.0rem 0.90rem 1.6rem;
+
+            border : none;
+
+            font-family    : $font-display-2;
+            font-size      : 1.8rem;
+            color          : $gray-800;
+
+            &::placeholder {
+
+                font-family : $font-display-2;
+                font-size   : 1.5rem;
+                color       : $gray-700;
+
+            }
+
+            &:focus {
+
+                outline : none;
+
+            }
+
+            // remove placeholder on focus and then replace placeholder on blur
+            &:focus::placeholder {
+
+                color : transparent;
+
+            }
+
+        } // end of form
+
+        &--button-container {
+
+            margin  : 0 0 0 0;
+
+            &--button {
+
+                @include button();
+
+                padding : 0.85rem 2.0rem;
+
+                border        : none; // get rid of the default border
+                border-radius : 0; // get rid of the default radius
+
+                // background : $green-200;
+                // background : $steel-blue-200 ;
+                background : $blue-300;
+
+                &:hover {
+
+                    background : $blue-400;
+
+                }             
+
+            } // end of button
+        
+        } // end of button-container
+
+    } // end of form
+
+} // end of search-box
+

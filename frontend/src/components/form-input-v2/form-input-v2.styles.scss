@@ -1,0 +1,65 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.form-input-v2--container {
+
+    &--label {
+
+        display : block;
+        width   : 100%;
+        padding : 0 0 1.2rem 5px;
+
+        font-family : $font-primary-1;
+        font-size   : 1.3rem;
+        font-weight : 400;
+        color       : $black;
+
+        background : $white;
+
+        pointer-events : none;
+
+    } // end of label
+
+    &--main {
+
+        display         : flex;
+        align-items     : center;
+        justify-content : space-between;
+        width           : 100%;
+        margin          : 3.0rem 0 0 0;
+        padding         : 0 5px 0 5px;
+
+        &--span {
+
+            font-family : $font-primary-1;
+            font-size   : 1.6rem;
+            font-weight : 400;
+            color       : $gray-650;
+
+            cursor : default;
+
+        }
+
+        &--input {
+
+            border : none;
+
+            font-family : $font-primary-1;
+            font-size   : 1.6rem;
+            font-weight : 400;
+            color       : $gray-650;
+            text-align  : right;
+
+            background-color : $gray-200;
+
+             &:focus {
+                outline : none;
+            }
+
+        } // end of input
+
+    } // end of main
+
+} // end of form input v2 container

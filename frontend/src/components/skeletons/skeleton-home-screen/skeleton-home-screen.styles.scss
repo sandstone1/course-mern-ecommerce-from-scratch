@@ -1,0 +1,100 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../../base.styles.scss";
+
+
+
+// --------------
+
+// change #1
+// for the MERN ecommerce from scratch course I decreased the .skeleton-home-screen padding
+// from " padding : 0rem 11rem; " to " padding : 2rem 2rem; "
+
+// change #2
+// and decresed the .skeleton-wrapper margin from " margin : 30px 0 30px 0; " to
+// " margin : 0 0 0 0; "
+
+// change #3
+// and I added 2 media queries to .skeleton-wrapper
+
+// change #4
+// because of display errors as I reduced the screen size I had to hide the third html
+// block for max-width : $bp-1024 and I had to hide the second html block for the
+// max-width : $bp-620
+
+// change #5
+// and added a margin to the .skeleton-home-screen of " margin : 2rem 2rem 2rem 2rem; "
+
+// change #6
+// and added " display : grid; " and " width : 100%; " to .skeleton-home-screen
+
+// change #7
+// and added " grid-gap : 0 3rem; " to .skeleton-wrapper
+
+// --------------
+
+
+
+.skeleton-wrapper {
+    display               : grid;
+    grid-template-columns : repeat( 3, 1fr );
+    position              : relative;
+    justify-content       : center;
+    align-content         : center;
+    justify-items         : center;
+    align-items           : center;
+    grid-gap              : 0 3rem;
+    margin                : 0 0 0 0;
+
+    border-radius : 4px;
+
+    overflow : hidden; /* this will make sure that we don't see the animation when it is outside
+    the wrapper and remember we have to add " overflow : hidden; " to this element in order for
+    this to work */
+
+    @media all and ( max-width : $bp-1024 ) {
+
+        grid-template-columns : repeat( 2, 1fr );
+
+    }
+
+    @media all and ( max-width : $bp-620 ) {
+
+        grid-template-columns : 1fr;
+
+    }
+
+}
+
+.skeleton-home-screen {
+    display : grid;
+    width   : 100%;
+    margin  : 4rem 0;
+    padding : 2rem 2rem;
+
+    border : rgba( 204, 204, 204, 1 ) 1px dotted;
+}
+
+
+
+
+
+@media all and ( max-width : $bp-1024 ) {
+
+    .skeleton-home-screen:nth-child( 3 ) {
+
+        display: none;
+
+    }
+
+}
+
+@media all and ( max-width : $bp-620 ) {
+
+    .skeleton-home-screen:nth-child( 2 ) {
+
+        display: none;
+
+    }
+
+}

@@ -1,0 +1,28 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+.cart-icon {
+    display       : grid;
+    justify-items : center;
+    position      : relative;
+    margin        : 0 0 0.3rem 0;
+    padding       : 1.5rem;
+
+    cursor : pointer;
+
+    &--icon {
+        width  : 2.4rem;
+        height : 2.4rem;
+    }
+
+    &--item-count {
+        position : absolute;
+        bottom   : 1.5rem;
+
+        font-size   : 1.0rem;
+        font-weight : 400;
+        color : $white;
+    }
+}
+

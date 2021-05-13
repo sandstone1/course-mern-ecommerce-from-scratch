@@ -1,0 +1,313 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.cart-item {
+
+    display               : grid;
+    grid-template-rows    : min-content;
+    grid-template-columns : 26% 24% 10% 14% 6%; // needs to match the header element
+    justify-items         : left;
+    align-items           : center;
+    grid-gap              : 0 5%;
+    margin                : 4.0rem 0 0 0;
+    padding               : 0 0 4.0rem 0;
+
+    border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+    font-family : $font-primary-1;
+    font-size   : 1.6rem;
+    font-weight : 300;
+    color       : $gray-900;
+
+    @media all and ( max-width : $bp-1280 ) {
+
+        // font-size : 110.0%; // the default seemed a little small so I increased the font size
+
+    }
+
+    @media all and ( max-width : $bp-1024 ) {
+
+        grid-template-rows    : repeat( 3, min-content );
+        grid-template-columns : repeat( 12, 1fr );
+        justify-items         : start;            
+        margin                : 6.0rem 0 6.0rem 0;
+        padding               : 2.0rem;
+    
+        border : rgba( 204, 204, 204, 1 ) 1px dotted;
+
+        font-size : 110.0%; // the default seemed a little small so I increased the font size
+       
+    }
+
+    @media all and ( max-width : $bp-920 ) {
+
+        // font-size : 110.0%; // the default seemed a little small so I increased the font size
+
+    }
+
+    // decrease the top margin on the first cart item
+    &:first-child {
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            margin : 5.0rem 0 6.0rem 0;
+        
+        }
+
+    }
+
+    // remove the bottom border for the last cart item
+    &:last-child {
+
+        // border-bottom: none;
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            border-bottom: rgba( 204, 204, 204, 1 ) 1px dotted;
+        
+        }
+
+    }
+
+    // image
+    &--image {
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row    : 1 / 2;
+            grid-column : 4 / 10;
+            margin      : 0 0 0 0;
+    
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-row    : 1 / 2;
+            grid-column : 3 / 11;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-row    : 1 / 2;
+            grid-column : 2 / 12;
+    
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-row    : 1 / 2;
+            grid-column : 1 / 13;
+    
+        }
+
+    } // end of image
+
+    // name
+    &--name {
+
+        margin : 0 0 0 0;
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 4 / 7;
+            margin      : 2.8rem 0 0 0;
+    
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 3 / 7;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 2 / 7;
+    
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 1 / 7;
+    
+        }
+
+    } // end of name
+
+    // price
+    &--price {
+
+        color : $gray-700;
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row     : 2 / 3;
+            grid-column  : 7 / 10;
+            justify-self : end;
+            margin       : 2.8rem 0 0 0;
+    
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-row     : 2 / 3;
+            grid-column  : 7 / 11;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 7 / 12;
+    
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 7 / 13;
+    
+        }
+
+    } // end of price
+
+    // quantity
+    &--quantity {
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 4 / 7;
+            margin      : 2.3rem 0 0 0; // decreased the top margin from 2.8rem to 2.3rem since
+            // there was a 0.5rem top padding in the quantity select element and this made the
+            // quantity select element line up better with the remove icon or trash can
+    
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 3 / 7;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 2 / 7;
+    
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 1 / 7;
+    
+        }
+
+    } // end of quantity
+
+    // quantity select
+    &--quantity--select {
+
+        width   : 100%;
+        padding : 0.5rem 3.0rem;
+
+        border        : 1px solid rgba( 230, 230, 230, 1 );
+        border-radius : 4px;
+
+        font-family : $font-primary-1;
+        font-size   : 1.5rem;
+        font-weight : 300;
+        color       : $gray-900;
+        line-height : 1.6;
+
+        background : $gray-300;
+
+        // from stackoverflow: "Each link has five different states: link, hover, active,
+        // focus and visited.
+
+        // Link is the normal appearance, hover is when you mouse over, active is the
+        // state when it's clicked, focus follows active and visited is the state you end
+        // up when you unfocus the recently clicked link.
+
+        // remove the blue outline that is around the select element after selecting a
+        // new value
+        &:focus {
+
+            outline : none;
+
+        }
+
+        @media all and ( max-width : $bp-1280 ) {
+
+            font-size : 100%; // had to manually set the font size on the select element 
+    
+        }
+
+    } // end of quantity-select
+
+    // delete
+    &--delete {
+
+        padding : 1.5rem 2.0rem;
+
+        border-radius : 4px;
+
+        cursor : pointer;
+
+        transition : all 0.2s ease-out;
+    
+        &:hover {
+
+            background : $gray-300;
+
+        }
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row     : 3 / 4;
+            grid-column  : 7 / 10;
+            justify-self : end;
+            margin       : 2.8rem 0 0 0;
+            padding      : 0 0 0 0;
+    
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 7 / 11;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 7 / 12;
+    
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 7 / 13;
+    
+        }
+
+        &--fa-trash {
+
+            color : $brown-200;
+
+        }
+
+    } // end of delete
+
+} // end of cart-item

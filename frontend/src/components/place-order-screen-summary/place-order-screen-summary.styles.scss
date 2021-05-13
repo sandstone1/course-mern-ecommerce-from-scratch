@@ -1,0 +1,263 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+// order summary
+.place-order-screen--order-summary {
+
+    @media all and ( max-width : $bp-1280 ) {
+
+        display               : grid;
+        grid-template-rows    : min-content;
+        grid-template-columns : 1fr;
+        margin                : 6.0rem 0 0 0;
+
+    }
+
+    // subtotal box
+    &--subtotal {
+
+        display               : grid;
+        grid-template-rows    : repeat( 2, min-content);
+        grid-template-columns : 100%;
+        padding               : 2.0rem 2.0rem 3.0rem 2.0rem;
+
+        border: 1px solid rgba( 211, 211, 211, 1 );
+
+        /*
+        // background : rgba( 244, 244, 246, 1 ); 
+        background-image: linear-gradient(
+
+            135deg, rgba(245, 247, 250, 1) 0%, rgba(195, 207, 226, 1) 100%
+
+        );
+        */
+
+        // this is a better blue gradiant than the blue gradiant above
+        background : linear-gradient(
+
+            120deg, rgba( 161, 196, 253, 1 ) 0%, rgba( 194, 233, 251, 1 ) 100%
+
+        );
+
+        @media all and ( max-width : $bp-1280 ) {
+
+            grid-template-columns : 35%;
+            justify-content       : center;
+
+        }
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-template-columns : 40%;
+
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-template-columns : 45%;
+
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-template-columns : 55%;
+
+        }
+
+        @media all and ( max-width : $bp-620 ) {
+
+            grid-template-columns : 80%;
+
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-template-columns : 90%;
+
+        }
+
+        @media all and ( max-width : $bp-375 ) {
+
+            grid-template-columns : 100%;
+
+        }
+
+        &--title {
+
+            margin  : 0 0 2.0rem 0;
+            padding : 0 0 2.0rem 0;
+        
+            border-bottom : 1px solid rgba( 160, 160, 160, 1 );
+
+            font-size      : 2.4rem;
+            color          : $gray-900;
+            letter-spacing : 1px;
+            text-align     : center;
+
+            @media all and ( max-width : $bp-1280 ) {
+
+                text-align : center;
+    
+            }
+
+        } // end of title
+
+        &--description {
+
+            margin  : 0 0 3.0rem 0;
+            padding : 0 0 2.0rem 0;
+        
+            border-bottom : 1px solid rgba( 160, 160, 160, 1 );
+
+            font-size      : 1.8rem;
+            color          : $gray-900;
+            letter-spacing : 1px;
+
+            @media all and ( max-width : $bp-1280 ) {
+
+                text-align : center;
+    
+            }
+
+            @media all and ( max-width : $bp-480 ) {
+
+                text-align : left;
+    
+            }
+
+            &--1 {
+
+                display               : grid;
+                grid-template-columns : 2fr 1fr;
+                justify-content       : space-between;
+                margin                : 0 0 1.0rem 0;
+
+                &--a {
+
+                    text-align : left;
+
+                }
+
+                &--b {
+
+                    text-align : right;
+
+                }
+
+            } // end of 1
+
+            &--2 {
+
+                display               : grid;
+                grid-template-columns : 2fr 1fr;
+                justify-content       : space-between;
+                margin                : 0 0 1.0rem 0;
+
+                &--a {
+
+                    text-align : left;
+
+                }
+
+                &--b {
+
+                    text-align : right;
+
+                }
+
+            } // end of 2
+
+            &--3 {
+
+                display               : grid;
+                grid-template-columns : 2fr 1fr;
+                justify-content       : space-between;
+                margin                : 0 0 1.0rem 0;
+
+                &--a {
+
+                    text-align : left;
+
+                }
+
+                &--b {
+
+                    text-align : right;
+
+                }
+
+            } // end of 3
+
+            &--4 {
+
+                display               : grid;
+                grid-template-columns : 2fr 1fr;
+                justify-content       : space-between;
+                margin                : 0 0 1.0rem 0;
+
+                &--a {
+    
+                    text-align : left;
+
+                }
+
+                &--b {
+
+                    border-bottom: 1px solid rgba( 160, 160, 160, 1 );
+                    text-align : right;
+
+                }
+
+            } // end of 4
+
+            &--5 {
+
+                display               : grid;
+                grid-template-columns : 2fr 1fr;
+                justify-content       : space-between;
+
+                font-size   : 1.9rem;
+                font-weight : 400;
+
+                &--a {
+
+                    text-align : left;
+
+                }
+
+                &--b {
+
+                    text-align : right;
+
+                }
+
+            }
+
+        } // end of 5
+
+        &--btn--active {
+
+            @include button();
+
+            display : block; // this makes the button span the element
+
+            letter-spacing : 1px;
+
+        }
+
+        // disable the link if we are out of stock
+        &--btn--disable {
+
+            @include button();
+            display : block; // this makes the button span the element
+
+            letter-spacing : 1px;
+
+            pointer-events : none; // disable the link if we are out of stock
+
+        }
+        
+    } // end of description
+
+} // end of order summary

@@ -1,0 +1,248 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.order-screen {
+
+    display               : grid;
+    grid-template-columns : 2fr 1fr;
+    grid-gap              : 0 6.0rem;
+    margin                : 4.0rem 0;
+
+    @media all and ( max-width : $bp-1280 ) {
+
+        grid-template-rows    : repeat( 6, min-content );
+        grid-template-columns : 1fr;
+
+    }
+
+    &--breadcrumb {
+
+        display : none;
+        
+        @media all and ( max-width : $bp-620 ) {
+
+            display : block;
+            margin  : 0 0 3.0rem 0;
+
+            font-family    : $font-primary-1;
+            font-size      : 1.5rem;
+            font-weight    : 400;
+            color          : $gray-900;
+            letter-spacing : 0;
+
+        }
+
+    } // end of breadcrumb
+
+    &--col-1 {
+
+        display               : grid;
+        grid-template-rows    : repeat( 4, min-content );
+        grid-template-columns : 1fr;
+
+        &--order-id {
+
+            grid-row    : 1 / 2;
+            grid-column : 1 / 2;
+            margin      : 1.0rem 0 5.0rem 0;
+
+            &--title {
+
+                margin  : 0 0 1.5rem 0;
+                padding : 0 0 0.5rem 0;
+
+                border-bottom : solid 1px rgba( 211, 211, 211, 1 );
+            
+                font-family    : $font-primary-1;
+                font-size      : 2.8rem;
+                font-weight    : 300;
+                color          : $gray-800;
+                letter-spacing : 2px;
+            }
+
+        } // end of order id
+
+        &--shipping {
+
+            grid-row    : 2 / 3;
+            grid-column : 1 / 2;
+            margin      : 1.0rem 0 5.0rem 0;
+
+            &--title {
+
+                margin  : 0 0 1.5rem 0;
+                padding : 0 0 0.5rem 0;
+
+                border-bottom : solid 1px rgba( 211, 211, 211, 1 );
+            
+                font-family    : $font-primary-1;
+                font-size      : 2.8rem;
+                font-weight    : 300;
+                color          : $gray-800;
+                letter-spacing : 2px;
+
+            }
+
+            &--ul-1 > li {
+
+                display : inline-block; // use inline-block display list item's horizontally
+                padding : 0 0.6rem 1.4rem 0;
+
+            }
+
+            &--ul-1 > li:first-child {
+
+                font-weight : 400;
+
+            }
+
+            &--ul-1--last-child > li {
+
+                padding : 0 0.6rem 0 0;
+
+            }
+
+            &--ul-2 {
+
+                display               : grid;
+                grid-template-rows    : auto;            
+                grid-template-columns : 0.5fr;
+                margin                : 2.4rem 0 0 0;
+
+                @media all and ( max-width : $bp-620 ) {
+
+                    grid-template-columns : 1.0fr;
+        
+                }
+
+            }
+
+        } // end of shipping
+
+        &--payment-method {
+
+            grid-row    : 3 / 4;
+            grid-column : 1 / 2;
+            margin      : 1.0rem 0 5.0rem 0;
+
+            &--title {
+
+                margin  : 0 0 1.5rem 0;
+                padding : 0 0 0.5rem 0;
+
+                border-bottom : solid 1px rgba( 211, 211, 211, 1 );
+        
+                font-family    : $font-primary-1;
+                font-size      : 2.8rem;
+                font-weight    : 300;
+                color          : $gray-800;
+                letter-spacing : 2px;
+
+            }
+
+            &--ul-1 {
+
+                display               : grid;
+                grid-template-rows    : auto;            
+                grid-template-columns : repeat( 2, max-content);
+                grid-gap              : 0 0.6rem;
+
+                > li:first-child {
+
+                    font-weight : 400;
+
+                }
+
+            }
+
+            &--ul-2 {
+
+                display               : grid;
+                grid-template-rows    : auto;            
+                grid-template-columns : 0.5fr;
+                margin                : 2.4rem 0 0 0;
+
+                @media all and ( max-width : $bp-620 ) {
+
+                    grid-template-columns : 1.0fr;
+        
+                }
+
+            }
+
+        } // end of payment-method
+
+        &--order-items {
+
+            grid-row    : 4 / 5;
+            grid-column : 1 / 2;
+            margin      : 1.0rem 0 5.0rem 0;
+
+            &--title {
+
+                margin  : 0 0 1.5rem 0;
+                padding : 0 0 0.5rem 0;
+
+                border-bottom : solid 1px rgba( 211, 211, 211, 1 );
+        
+                font-family    : $font-primary-1;
+                font-size      : 2.8rem;
+                font-weight    : 300;
+                color          : $gray-800;
+                letter-spacing : 2px;
+
+            }
+
+        } // end of order-items
+
+    } // end of col 1
+
+    &--col-2 {
+
+        display               : grid;
+        grid-template-rows    : repeat( 2, min-content );
+        grid-template-columns : 1fr;
+
+        /*
+        &--order-summary {
+
+
+        } // end of order-summary
+        */
+
+        &--mark-as-delivered {
+
+            margin : 6.0rem 0 0 0;
+
+            &--button {
+
+                @include button();
+
+                width : 100%;
+
+                letter-spacing : 1px;
+
+            }
+
+        } // end of mark-as-delivered
+
+    } // end of col-2
+
+} // end of order-screen
+
+
+// modify the error message styles
+.error-message-container {
+
+    margin : 2.4rem 0 0 0;
+
+}
+
+// modify the success message styles
+.success-message-container {
+
+    margin : 2.4rem 0 0 0;
+
+}

@@ -1,0 +1,11 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+header {
+    grid-area : header;
+    margin    : 0 0 0 0;
+
+    background : $gray-background-1;
+
+}

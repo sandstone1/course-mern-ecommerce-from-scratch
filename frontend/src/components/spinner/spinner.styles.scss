@@ -1,0 +1,9 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+.spinner {
+    display : block;
+    width   : 200px;
+    margin  : 0 auto;
+}

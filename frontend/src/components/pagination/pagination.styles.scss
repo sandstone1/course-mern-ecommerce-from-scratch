@@ -1,0 +1,47 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.pagination {
+
+    &--a {
+
+        display : inline-block;
+        margin  : 0 1.6rem 0 0;
+        padding : 1.0rem 2.0rem;
+
+        border-radius: 0.3rem;
+
+        background: $blue-200;
+
+        transition : all 0.2s ease-out;
+
+        &:hover {
+
+            background: $blue-300;
+
+        }
+
+        // set the background for the active class
+        &.active {
+
+            background : $gray-700;
+
+            &:hover {
+
+                background: $gray-800;
+    
+            }
+
+        } // end of a.active
+
+        &--page-number {
+
+            color : $white;
+
+        } // end of page-number
+
+    } // end of a
+
+} // end of pagination

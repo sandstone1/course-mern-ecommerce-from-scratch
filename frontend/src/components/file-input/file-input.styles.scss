@@ -1,0 +1,61 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.file-input--container {
+
+    padding         : 0 0 3.0rem 0;
+
+    &--main {
+
+        display         : flex;
+        align-items     : center;
+        justify-content : space-between;
+        width           : 100%;
+        margin          : 4.0rem 0 0 0;
+        padding         : 0 5px 0 5px;
+
+        &--span {
+
+            font-family : $font-primary-1;
+            font-size   : 1.6rem;
+            font-weight : 400;
+            color       : $gray-650;
+
+            cursor : default;
+
+        } // end of span
+
+        // input styles from codrops
+        &--input {
+            
+            position : absolute;
+            width    : 0.1px;
+            height   : 0.1px;
+            z-index  : -1;
+
+            opacity  : 0;
+            overflow : hidden;
+            
+        } // end of input
+
+        &--label {
+
+            @include button();
+  
+            padding : 1.2rem 2.0rem;
+
+            font-size : 1.45rem;
+
+            background : $cyan-200;
+            // background : rgba( 211, 57, 76, 1 );
+            // background : $brown-200;
+    
+            cursor : pointer;
+    
+        } // end of label
+
+    } // end of main
+
+} // end of file input container

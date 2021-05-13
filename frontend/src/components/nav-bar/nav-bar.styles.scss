@@ -1,0 +1,256 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.navbar {
+
+    display               : grid;
+    grid-template-rows    : auto;
+    grid-template-columns : repeat( 3, min-content );
+    justify-content       : space-between;
+    align-content         : center;
+    align-items           : center;
+    max-width             : 1200px;
+    height                : 100%;  // keeps the height at 85px / 105px
+    margin                : 0 auto;
+
+    @media all and ( max-width : $bp-1280 ) {
+
+        grid-template-rows    : repeat( 2, auto );
+        grid-template-columns : min-content;
+        justify-content       : center;
+        justify-items         : center;
+        grid-gap              : 1.4rem 0;
+
+    }
+
+    h2 > a {
+
+        font-family    : $font-display-2;
+        font-size      : 2.0rem;
+        color          : $white;
+        text-transform : uppercase;
+
+    }
+
+    &--ul {
+
+        display               : grid;
+        grid-template-columns : repeat( 2, max-content );
+        grid-gap              : 0 1.5rem;
+        align-items           : center;
+
+        @media all and ( max-width : $bp-1280 ) {
+
+            grid-gap : 0 4.0rem;
+            padding  : 0 0 0 0;
+    
+        }
+
+        // cart button
+        &--cart > a {
+
+            display : block;
+            padding : 1.5rem;
+
+            font-family    : $font-display-2;
+            font-size      : 1.4rem;
+            color          : $gray-200;
+            text-transform : uppercase;
+            
+            transition : all 0.2s ease-out;
+
+            @media all and ( max-width : $bp-1280 ) {
+
+                padding : 0 0 0 0;
+       
+            }
+        }
+
+        // sign in button
+        &--sign-in > a {
+
+            display : block; // element has to inline in order for vertical-align to work
+            padding : 1.5rem;
+
+            font-family    : $font-display-2;
+            font-size      : 1.4rem;
+            color          : $gray-200;
+            text-transform : uppercase;
+            
+            transition : all 0.2s ease-out;
+
+            @media all and ( max-width : $bp-1280 ) {
+
+                padding : 0 0 0 0;
+
+                vertical-align : 0px; // make the nav buttons line up vertically
+        
+            }
+        }
+
+        // cart and sign in buttons - hover and active selectors
+        &--cart > a:hover, &--sign-in > a:hover,
+        &--cart > a:active, &--sign-in > a:active {
+
+            background-color : rgba( 255, 255, 255, 0.05 );
+
+            // move the background color up just a little to add a nice hoover effect
+            transform: translate3d( 0, -3px, 0);
+
+            // remove the animation effect for screen sizes under 1280 pixels
+            @media all and ( max-width : $bp-1280 ) {
+
+                background-color : inherit;
+
+                transform: none;
+        
+            }
+        }
+
+        // ==============================
+        // nav dropdown user
+        // ==============================
+
+        // nav dropdown user
+        &--dropdown-user > span {
+
+            display : block;
+            padding : 1.5rem;
+
+            font-family    : $font-display-2;
+            font-size      : 1.4rem;
+            color          : $gray-200;
+            text-transform : uppercase;
+            
+            transition : all 0.2s ease-out;
+
+            @media all and ( max-width : $bp-1280 ) {
+
+                padding : 0 0 0 0;
+        
+            }
+
+        }
+
+        // nav dropdown user - hover and active selectors
+        &--dropdown-user > span:hover,
+        &--dropdown-user > span:active {
+
+            background-color : rgba( 255, 255, 255, 0.05 );
+
+            cursor : pointer;
+
+            // move the background color up just a little to add a nice hoover effect
+            transform: translate3d( 0, -3px, 0); 
+
+            // remove the animation effect for screen sizes under 1280 pixels
+            @media all and ( max-width : $bp-1280 ) {
+
+                background-color : inherit;
+
+                transform: none;
+        
+            }
+        }
+
+        // rotate arrow - starting position
+        &--dropdown-user-span--arrow {
+
+            display : inline-block;
+
+            transform  : rotate( 0deg );
+            transition : transform 0.1s ease-in;
+
+        }
+
+        // rotate arrow - on click event
+        &--dropdown-user-span--arrow.arrow-change {
+
+            display : inline-block;
+
+            vertical-align : 2px;
+
+            transform : rotate( 180deg );
+
+        }
+
+        // ==============================
+        // nav dropdown admin
+        // ==============================
+
+        // nav dropdown admin
+        &--dropdown-admin > span {
+
+            display : block;
+            padding : 1.5rem;
+
+            font-family    : $font-display-2;
+            font-size      : 1.4rem;
+            color          : $gray-200;
+            text-transform : uppercase;
+            
+            transition : all 0.2s ease-out;
+
+            @media all and ( max-width : $bp-1280 ) {
+
+                padding : 0 0 0 0;
+        
+            }
+
+        }
+
+        // nav dropdown admin - hover and active selectors
+        &--dropdown-admin > span:hover,
+        &--dropdown-admin > span:active {
+
+            background-color : rgba( 255, 255, 255, 0.05 );
+
+            cursor : pointer;
+
+            // move the background color up just a little to add a nice hoover effect
+            transform: translate3d( 0, -3px, 0); 
+
+            // remove the animation effect for screen sizes under 1280 pixels
+            @media all and ( max-width : $bp-1280 ) {
+
+                background-color : inherit;
+
+                transform: none;
+        
+            }
+
+        }
+
+        // rotate arrow - starting position
+        &--dropdown-admin-span--arrow {
+
+            display : inline-block;
+
+            transform  : rotate( 0deg );
+            transition : transform 0.1s ease-out;
+
+        }
+
+        // rotate arrow - on click event
+        &--dropdown-admin-span--arrow.arrow-change {
+
+            display : inline-block;
+
+            vertical-align : 2px;
+
+            transform : rotate( 180deg );
+        
+        }
+
+    }
+
+}
+
+
+.navbar--ul.admin {
+
+    grid-template-columns : repeat( 3, max-content );
+
+}

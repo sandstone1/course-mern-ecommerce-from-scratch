@@ -1,0 +1,38 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.radio-button--container {
+
+    display               : grid;
+    grid-template-rows    : auto;
+    grid-template-columns : 1fr 1fr;
+    justify-content       : space-between;
+    align-items           : center;
+    margin                : 1.0rem 0 1.5rem 0;
+
+    @media all and ( max-width : $bp-375 ) {
+
+        grid-template-columns : 2fr 1fr;
+
+    }
+
+    &--label {
+
+        margin  : 0 1.5rem 0 0;
+
+        font-family : $font-primary-1;
+        font-size   : 1.6rem;
+        font-weight : 400;
+        color       : $gray-650;
+
+    }
+
+    &--input {
+
+        background-color : rgba( 255, 255, 255, 1 );
+
+    }
+
+}

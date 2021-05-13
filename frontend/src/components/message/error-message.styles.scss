@@ -1,0 +1,23 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.error-message-container {
+    width   : 100%;
+    margin  : 0 0 0 0;
+    padding : 2.0rem;
+
+    border-radius : 3px;
+
+    // red gradiant
+    background : linear-gradient( 270deg, rgba( 208, 114, 146, 0.4108018207282913 ) 0%, rgba( 214, 119, 143, 0.45281862745098034 ) 36%, rgba( 208, 26, 101, 0.19791666666666663 ) 100% );
+    background : linear-gradient( 120deg, rgba( 166, 192, 254, 1 ) 0%, rgba( 246, 128, 132, 1 ) 100% );
+
+    &--h3 {
+        font-family : $font-primary-1;
+        font-size   : 1.6rem;
+        font-weight : 400;
+        color       : $black;
+    }
+}

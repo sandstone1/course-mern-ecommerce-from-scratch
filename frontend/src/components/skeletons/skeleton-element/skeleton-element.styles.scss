@@ -1,0 +1,102 @@
+
+
+
+// --------------
+
+// change #1
+// for the MERN ecommerce from scratch course I decreased the .skeleton margins from
+// " margin : 10px 0 10px 0; " to " margin : 0 0 10px 0; "
+
+// change #2
+// and I increased the .skeleton.thumbnail width and height from
+
+/*
+.skeleton.thumbnail {
+    width  : 75px;
+    height : 30px;
+}
+*/
+
+// to
+
+/*
+.skeleton.thumbnail {
+    width  : 100%;
+    height : 250px;
+}
+*/
+
+// change #3
+// and I decreased the .skeleton.title margins from " margin : 10px 0 20px 0; " to
+// " margin : 10px 0 10px 0; "
+
+// change #4
+// and I decreased the .skeleton.title width from " width  : 100%; " to " width  : 75%; "
+
+// --------------
+
+
+
+// in this file we want to apply some basic styles to the different types of skeletons we
+// can have
+
+
+// base skeleton
+.skeleton {
+    margin : 0 0 10px 0;
+
+    border-radius : 4px;
+    
+    background : rgba( 221, 221, 221, 1 );
+}
+
+// so our TYPES will be text, title, avatar and thumbnail and these types will become classes
+// inside the SkeletonElement component
+
+// text
+.skeleton.text {
+    width  : 100%;
+    height : 12px;
+}
+
+// title
+.skeleton.title {
+    width  : 75%;
+    height : 20px;
+    margin : 10px 0 10px 0;
+}
+
+// create a circle
+.skeleton.avatar {
+    width  : 75px;
+    height : 75px;
+    
+    border-radius : 50%; 
+}
+
+// create a square
+.skeleton.thumbnail {
+    width  : 100%;
+    height : 250px;
+}
+
+
+
+/*
+remember, Chris Coyier said: " Here is the "plain English" of "#header.callout": Select
+the element which has an ID of header and also a class name of callout." also, Chris Coyier
+said: "Adding another class The & comes in handy when you're nesting and you want to create
+a more specific selector, like an element that has *both* of two classes, like this:
+
+CSS
+.some-class.another-class { }
+
+You can do this while nesting by using the &.
+
+SCSS
+.some-class {
+    &.another-class { }
+}"
+
+the SCSS version above equals the CSS version above
+*/

@@ -1,0 +1,78 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.shipping-screen {
+
+    display               : grid;
+    grid-template-rows    : auto;
+    grid-template-columns : 380px;
+    justify-content       : start;
+    margin                : 4.0rem 0;
+
+    @media all and ( max-width : $bp-480 ) {
+
+        grid-template-columns : 1fr;
+
+    }
+
+    &--breadcrumb {
+
+        display : none;
+        
+        @media all and ( max-width : $bp-620 ) {
+
+            display : block;
+            margin  : 0 0 3.0rem 0;
+
+            font-family    : $font-primary-1;
+            font-size      : 1.5rem;
+            font-weight    : 400;
+            color          : $gray-900;
+            letter-spacing : 0;
+
+        }
+
+    } // end of breadcrumb
+
+    &--title {
+
+        margin : 1.0rem 0 2.0rem 0;
+
+        font-family    : $font-primary-1;
+        font-size      : 3.2rem;
+        font-weight    : 300;
+        color          : $gray-800;
+        letter-spacing : 2px;
+
+    } // end of title
+
+    &--form {
+
+        &--button-container {
+
+            display : grid;
+
+            &--button {
+
+                @include button();
+
+                display : block; // this makes the button span the element
+                margin  : 1.0rem 0 0 0;
+    
+                letter-spacing : 1px;
+
+            }
+
+        } // end of button container
+
+    } // end of form
+
+} // end of shipping screen
+
+
+// modify the error message styles
+.error-message-container {
+    margin : 1.0rem 0 3.0rem 0;
+}

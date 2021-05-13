@@ -1,0 +1,282 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.admin-user-list-item {
+
+    display               : grid;
+    grid-template-rows    : min-content;
+    grid-template-columns : 26% 14% 26% 8% 8% 8%;
+    justify-items         : left;
+    align-content         : center;
+    grid-gap              : 0 2%;
+    height                : 10.0rem;
+    margin                : 0 0 0 0;
+    padding               : 0 0 0 0.5rem;
+
+    border-bottom : solid 1px rgba( 211, 211, 211, 1 );
+
+    font-family : $font-primary-1;
+    font-size   : 1.6rem;
+    font-weight : 300;
+    color       : $gray-900;
+
+    transition : all 0.2s ease-out;
+
+    &:hover {
+
+        background : $gray-200;
+
+        cursor : pointer;
+
+    }
+
+    &:nth-child( odd ) {
+
+        background-image: $gray-gradient-right;
+
+    }
+
+    &:nth-child( odd ):hover {
+
+        background : $gray-200;
+
+    }
+
+    @media all and ( max-width : $bp-1280 ) {
+
+        font-size : 110.0%; // the default seemed a little small so I increased the font size
+
+    }
+
+    @media all and ( max-width : $bp-920 ) {
+
+        grid-template-columns : 20% 39% 11% 11% 11%;
+
+    }
+
+    @media all and ( max-width : $bp-620 ) {
+
+        grid-template-columns : 40% 18% 18% 18%;
+
+    }
+
+    @media all and ( max-width : $bp-480 ) {
+
+        grid-template-columns : 60% 18% 18%;
+        align-items           : center;
+
+    }
+
+    @media all and ( max-width : $bp-375 ) {
+
+        grid-template-columns : 56% 20% 20%;
+        align-items           : center;
+
+    }
+
+    /*
+    @media all and ( max-width : $bp-480 ) {
+
+        grid-template-columns : 46% 20% 20% 8%;
+
+    }
+
+    @media all and ( max-width : $bp-375 ) {
+
+        grid-template-columns : 50% 18% 18% 8%;
+
+    }
+    */
+
+    &--id {
+
+        cursor : text;
+
+        @media all and ( max-width : $bp-920 ) {
+
+            display : none;
+
+        }
+
+    }
+
+    &--name {
+
+        cursor : text;
+
+    }
+
+    &--email {
+
+        @media all and ( max-width : $bp-620 ) {
+
+            display : none;
+
+        }
+    
+        > a {
+
+            position : relative;
+
+            color           : $blue-webkit-link;
+            text-decoration : none;
+
+            &:hover {
+
+                color : $blue-webkit-link;
+
+            }
+
+            // add animating underline
+            &::before {
+
+                position : absolute;
+                bottom   : 0;
+                left     : 0;
+                width    : 100%;
+                height   : 1px;
+
+
+                background-color : $blue-webkit-link;
+
+                content    : "";
+                visibility : hidden;
+                transform  : scaleX( 0 );
+                transition : all 0.3s ease-in-out 0s;
+
+            }
+
+            &:hover::before {
+
+                visibility : visible;
+                transform  : scaleX( 1 );
+
+            }
+
+        }
+
+    } // end of email > a
+
+    &--is-admin {
+
+        cursor : text;
+
+        @media all and ( max-width : $bp-480 ) {
+
+            display : none;
+
+        }
+
+        &--fa-check {
+
+            color : rgba( 0, 128, 0, 1 );
+
+            transition : all 0.2s ease-out;
+
+            &:hover {
+
+                color : rgba( 0, 108, 0, 1 );
+
+            }
+
+        }
+
+        &--fa-times {
+
+            color : rgba( 165, 42, 42, 1 );
+
+            transition : all 0.2s ease-out;
+
+            &:hover {
+
+                color : rgba( 145, 32, 32, 1 );
+
+            }
+
+        }
+
+    } // end of is-admin
+
+    &--edit > a {
+    
+        position : relative;
+
+        color           : $blue-webkit-link;
+        text-decoration : none;
+
+        &:hover {
+
+            color : $blue-webkit-link;
+
+        }
+
+        // add animating underline
+        &::before {
+
+            position : absolute;
+            bottom   : 0;
+            left     : 0;
+            width    : 100%;
+            height   : 1px;
+
+            background-color : $blue-webkit-link;
+
+            content    : "";
+            visibility : hidden;
+            transform  : scaleX( 0 );
+            transition : all 0.3s ease-in-out 0s;
+
+        }
+
+        &:hover::before {
+
+            visibility : visible;
+            transform  : scaleX( 1 );
+
+        }
+
+    } // end of edit > a
+
+    &--delete {
+
+        position: relative;
+
+        &--fa-trash {
+
+            position : absolute;
+            left     : -2.0rem;
+            bottom   : -1.0rem;
+            padding  : 1.5rem 2.0rem;
+
+            border-radius : 4px;
+
+            color : rgba( 165, 42, 42, 1 );
+    
+            cursor : pointer;
+    
+            transition : all 0.2s ease-out;
+        
+            &:hover {
+
+                // background : rgba( 232, 238, 245, 1 );
+                background : rgba( 237, 237, 239, 1 );
+
+            }
+
+            @media all and ( max-width : $bp-480 ) {
+
+                position : static;
+                left     : 0;
+                bottom   : 0;
+                padding  : 0;
+
+            }
+            
+        }
+
+    } // end of delete
+
+} // end admin-user-list-item
+

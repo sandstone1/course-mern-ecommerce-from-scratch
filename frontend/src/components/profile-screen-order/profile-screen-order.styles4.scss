@@ -1,0 +1,291 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+.profile--orders--main {
+
+    display               : grid;
+    grid-template-rows    : min-content;
+    grid-template-columns : repeat( 6, minmax( max-content, 1fr ) );
+    justify-items         : center;
+    align-items           : center;
+    grid-gap              : 0 2%;
+    margin                : 4.0rem 0 0 0;
+    padding               : 0 0 4.0rem 0;
+
+    border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+    font-family : $font-primary-1;
+    font-size   : 1.5rem;
+    font-weight : 400;
+    color       : $gray-650;
+
+    @media all and ( max-width : $bp-1280 ) {
+
+        font-size : 110.0%; // the default seemed a little small so I increased the font size
+
+    }
+
+    @media all and ( max-width : $bp-1024 ) {
+
+        grid-template-rows    : repeat( 3, min-content );
+        grid-template-columns : repeat( 12, 1fr );
+        justify-items         : start;            
+        margin                : 6.0rem 0 6.0rem 0;
+        padding               : 2.0rem;
+    
+        border : rgba( 204, 204, 204, 1 ) 1px dotted;
+       
+    }
+
+    @media all and ( max-width : $bp-920 ) {
+
+        font-size : 110.0%; // the default seemed a little small so I increased the font size
+
+    }
+
+    // decrease the top margin on the first order item
+    &:first-child {
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            margin : 5.0rem 0 6.0rem 0;
+        
+        }
+
+    }
+
+    // remove the bottom border for the last order item
+    &:last-child {
+
+        border-bottom: none;
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            border-bottom: rgba( 204, 204, 204, 1 ) 1px dotted;
+        
+        }
+
+    }
+
+    &--id {
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row    : 1 / 2;
+            grid-column : 4 / 10;
+            margin      : 0 0 0 0;
+    
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-row    : 1 / 2;
+            grid-column : 3 / 11;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-row    : 1 / 2;
+            grid-column : 2 / 12;
+    
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-row    : 1 / 2;
+            grid-column : 1 / 13;
+    
+        }
+
+    }
+
+    &--date {
+
+        margin : 0 0 0 1.0rem;
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 4 / 7;
+            margin      : 2.8rem 0 0 0;
+    
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 3 / 7;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 2 / 7;
+    
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 1 / 7;
+    
+        }
+
+    }
+
+    &--total {
+
+        color : $gray-700;
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row     : 2 / 3;
+            grid-column  : 7 / 10;
+            justify-self : end;
+            margin       : 2.8rem 0 0 0;
+    
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-row     : 2 / 3;
+            grid-column  : 7 / 11;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 7 / 12;
+    
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-row    : 2 / 3;
+            grid-column : 7 / 13;
+    
+        }
+
+    }
+
+    &--paid {
+
+        display : block;
+
+        &--fa-times {
+            color : brown;
+        }
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 4 / 7;
+            margin      : 2.0rem 0 0 0;
+    
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 3 / 7;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 2 / 7;
+    
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 1 / 7;
+    
+        }
+
+    }
+
+    &--delivered {
+
+        display : block;
+
+        &--fa-times {
+            color : brown;
+        }
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row    : 4 / 5;
+            grid-column : 4 / 7;
+            margin      : 2.0rem 0 0 0;
+    
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-row    : 4 / 5;
+            grid-column : 3 / 7;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-row    : 4 / 5;
+            grid-column : 2 / 7;
+    
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            grid-row    : 4 / 5;
+            grid-column : 1 / 7;
+    
+        }
+
+    }
+
+    &--link-container {
+
+        display : block;
+
+        > a {
+            
+            padding : 1.2rem 1.6rem;
+
+            border        : 1px dotted rgba( 211, 211, 211, 1 );
+            border-radius : 0; // get rid of the default radius
+
+            outline : none;
+        
+            font-family    : $font-primary-1;
+            font-size      : 1.5rem;
+            font-weight    : 400;
+            color          : $gray-675;
+            text-align     : center;
+        
+            // background : $gray-300;
+            
+            background-image : linear-gradient( to top, rgba( 223, 233, 243, 1 ) 0%, rgba( 255, 255, 255, 1 ) 100% );
+            // background-image: linear-gradient( -225deg, #FFFEFF 0%, #D7FFFE 100% );
+            // background-image: linear-gradient( 120deg, #fdfbfb 0%, #ebedee 100% );
+        
+            transition : all 0.2s ease-out;
+            cursor     : pointer;
+        
+            &:hover {
+                // background : $gray-325;
+
+                background-image : linear-gradient( to top, rgba( 218, 228, 238, 1 ) 0%, rgba( 250, 250, 250, 1 ) 100% );
+            }
+
+        }
+    
+    }
+
+}

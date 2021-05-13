@@ -1,0 +1,444 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.profile-screen {
+
+    display               : grid;
+    grid-template-rows    : min-content;
+    grid-template-columns : 38.0rem 1fr;
+    grid-gap              : 0 12.0rem; 
+    margin                : 4.0rem 0;
+
+    @media all and ( max-width : $bp-1383 ) {
+
+        grid-template-rows    : repeat( 2, min-content );
+        grid-template-columns : 1fr;
+        justify-items         : center;
+
+    }
+
+    // ==============================
+    // Profile Update Form Section
+    // ==============================
+
+    &--update {        
+
+        @media all and ( max-width : $bp-1383 ) {
+
+            grid-column : 1 / -1;
+            width       : 38.0rem;
+            margin      : 0 0 10.0rem 0;
+    
+        }
+
+        @media all and ( max-width : $bp-375 ) {
+
+            width       : 100%;
+            margin      : 0 0 10.0rem 0;
+            
+        }
+
+        &--title {
+
+            margin  : 1.0rem 0 4.0rem 0;
+            /*
+            margin  : 1.0rem 0 1.5rem 0;
+            padding : 0 0 0.5rem 0;
+
+            border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+            */
+    
+            font-family    : $font-primary-1;
+            font-size      : 3.2rem;
+            font-weight    : 300;
+            color          : $gray-800;
+            letter-spacing : 2px;
+
+        } // end of title
+
+        // wrap the messages with a div so we can add some bottom margin
+        &--messages {
+
+            margin : 0 0 6.0rem 0;
+
+        }
+
+        &--form {
+
+            &--button-container {
+
+                display  : grid;
+    
+                &--button {
+
+                    @include button();
+                    display : block; // this makes the button span the element
+                    margin  : 1.0rem 0 0 0;
+        
+                    letter-spacing : 1px;
+
+                    outline : none;
+
+                }
+
+            }
+
+        } // end of form
+    
+    } // end of update
+
+    // ==============================
+    // Profile Orders Section
+    // ==============================
+
+    &--orders {
+
+        @media all and ( max-width : $bp-1383 ) {
+
+            grid-row : 2 / -1;
+            width    : 700px;
+            margin   : 0 0 10.0rem 0;
+    
+        }
+
+        @media all and ( max-width : $bp-1280 ) {
+
+            width : auto;
+    
+        }
+
+        @media all and ( max-width : $bp-480 ) {
+
+            width : 38.0rem;
+    
+        }
+
+        @media all and ( max-width : $bp-375 ) {
+
+            width : 100%;
+    
+        }
+
+        &--title {
+
+            margin  : 1.0rem 0 1.5rem 0;
+            padding : 0 0 0.5rem 0;
+
+            border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+    
+            font-family    : $font-primary-1;
+            font-size      : 3.2rem;
+            font-weight    : 300;
+            color          : $gray-800;
+            letter-spacing : 2px;
+        
+        } // end of title
+
+        // ==============================
+        // Profile Orders Table
+        // ==============================
+
+        &--table {
+
+            width : 100%;
+
+            border-collapse : collapse; // allows me to put a border on tr
+            border-spacing  : 0;
+                        
+            font-family : $font-primary-1;
+            font-size   : 1.5rem;
+            // font-weight : 400;
+            color       : $gray-900;
+            text-align  : left;
+
+            > thead {
+
+                border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+                font-family    : $font-primary-1;
+                font-size      : 1.5rem;
+                font-weight    : 300;
+                color          : $gray-900;
+                text-transform : uppercase;
+
+                > tr > td {
+
+                    line-height : 20px;
+
+                    @media all and ( max-width : $bp-1280 ) {
+
+                        line-height : 16px;
+
+                    }
+
+                    &:first-child {
+                    
+                        @media all and ( max-width : $bp-768 ) {
+
+                            display : none;                    
+                
+                        }
+
+                    }
+
+                    &:nth-child( 4 ) {
+                    
+                        @media all and ( max-width : $bp-480 ) {
+
+                            display : none;                    
+                
+                        }
+
+                    }
+
+                    &:nth-child( 5 ) {
+                    
+                        @media all and ( max-width : $bp-620 ) {
+
+                            display : none;                    
+                
+                        }
+
+                    }
+
+                }
+
+                > tr:nth-child( 2 ) > td {
+                    
+                    padding : 0 0 1.0rem 0;
+
+                }
+                
+            }
+
+            &--tbody--tr {
+
+                border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+                &:hover {
+
+                    background : $gray-200;
+            
+                    cursor : pointer;
+            
+                }
+            
+                &:nth-child( odd ) {
+            
+                    background-image: $gray-gradient-right;
+            
+                }
+            
+                &:nth-child( odd ):hover {
+            
+                    background : $gray-200;
+            
+                }
+
+                &--td {
+
+                    &--id {
+
+                        width   : 230px;
+                        padding : 4.0rem 2.0rem 4.0rem 0;
+                    
+                        @media all and ( max-width : $bp-768 ) {
+
+                            display : none;                    
+                
+                        }
+                
+                    }
+
+                    &--date {
+
+                        width   : 104px;
+                        padding : 4.0rem 2.0rem 4.0rem 0;
+
+                        @media all and ( max-width : $bp-480 ) {
+
+                            width : 16.0rem;
+                    
+                        }
+
+                        @media all and ( max-width : $bp-375 ) {
+
+                            width : 16.0rem;
+                    
+                        }
+                
+                    }
+
+                    &--total {
+
+                        width   : 94px;
+                        padding : 4.0rem 2.5rem 4.0rem 0;
+
+                        @media all and ( max-width : $bp-1280 ) {
+
+                            padding : 4.0rem 6.0rem 4.0rem 0;    
+                        
+                        }
+
+                        @media all and ( max-width : $bp-480 ) {
+
+                            width : 16.0rem;
+                    
+                        }
+
+                        @media all and ( max-width : $bp-375 ) {
+
+                            width : 13.0rem;
+                    
+                        }
+                
+                    }
+
+                    &--paid {
+
+                        width   : 104px;
+                        padding : 4.0rem 2.0rem 4.0rem 0;
+
+                        @media all and ( max-width : $bp-480 ) {
+
+                            display : none;                    
+
+                        }
+                
+                        &--fa-times {
+                            color : brown;
+                        }
+                
+                    }
+
+                    &--delivered {
+
+                        width   : 104px;
+                        padding : 4.0rem 1.5rem 4.0rem 0;
+                
+                        &--fa-times {
+                            color : brown;
+                        }
+                
+                        @media all and ( max-width : $bp-620 ) {
+                
+                            display : none;
+                    
+                        }
+
+                    }
+
+
+                    /*
+                    &--order-screen-link {
+
+                        padding : 4.0rem 0 4.0rem 0;
+
+                        text-align : right;
+                
+                        > a {
+                            
+                            padding : 1.2rem 1.6rem;
+                
+                            border        : 1px dotted rgba( 211, 211, 211, 1 );
+                            border-radius : 0; // get rid of the default radius
+                
+                            outline : none;
+                        
+                            font-family    : $font-primary-1;
+                            font-size      : 1.5rem;
+                            font-weight    : 400;
+                            color          : $gray-675;
+                            text-align     : center;
+                        
+                            // background : $gray-300;
+
+                            background-image : $gray-gradient-to-top;
+                            // background-image: linear-gradient( -225deg, #FFFEFF 0%, #D7FFFE 100% );
+                            // background-image: linear-gradient( 120deg, rgba( 253, 251, 251, 1 ) 0%, rgba( 235, 237, 238, 1 ) 100% );
+                        
+                            transition : all 0.2s ease-out;
+                            cursor     : pointer;
+                        
+                            &:hover {
+                
+                                background-image : $gray-gradient-to-top-hover;
+
+                            }
+                
+                        }
+                    
+                    } // end of order screen link
+                    */
+
+
+                    // order screen link
+                    &--order-screen-link > a {
+
+                        position : relative;
+                        margin   : 0 0 0 0;
+
+                        color           : $blue-webkit-link;
+                        text-decoration : none;
+
+                        @media all and ( max-width : $bp-1280 ) {
+                
+                            margin   : 0 1.0rem 0 0;
+                    
+                        }
+
+                        &:hover {
+
+                            color : $blue-webkit-link;
+
+                        }
+
+                        // add animating underline
+                        &::before {
+
+                            position : absolute;
+                            bottom   : 0;
+                            left     : 0;
+                            width    : 100%;
+                            height   : 1px;
+
+                            background-color : $blue-webkit-link;
+
+                            content    : "";
+                            visibility : hidden;
+                            transform  : scaleX( 0 );
+                            transition : all 0.3s ease-in-out 0s;
+
+                        }
+
+                        &:hover::before {
+
+                            visibility : visible;
+                            transform  : scaleX( 1 );
+
+                        }
+
+                    } // end of order screen link
+
+                } // end of td
+
+            } // end of table tr
+
+        } // end of table
+
+    } // end of orders
+
+} // end of profile
+
+
+// modify the error message styles
+.error-message-container {
+    margin : 1.0rem 0 6.0rem 0;
+}
+
+// modify the success message styles
+.success-message-container {
+    margin : 1.0rem 0 6.0rem 0;
+}

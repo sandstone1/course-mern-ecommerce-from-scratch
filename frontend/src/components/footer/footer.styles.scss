@@ -1,0 +1,15 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+footer {
+    grid-area   : footer;
+    display     : grid;
+    align-items : center;
+    
+    h2 {
+        font-size  : 1.4rem;
+        color      : $gray-650;
+        text-align : center; 
+    }
+}

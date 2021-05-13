@@ -1,0 +1,817 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.product-screen {
+
+    display               : grid; // main grid
+    grid-template-rows    : repeat( 3, min-content );
+    grid-template-columns : 1fr;
+    grid-gap              : 0 6.0rem; // row column
+    margin                : 3.0rem 0 10.0vw 0;
+
+    @media all and ( max-width : $bp-1024 ) {
+
+        grid-gap  : 8.0rem 0; // row column
+
+    }
+
+    // back to home page button
+    &--button {
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row    : 1 / 2;
+            grid-column : 1 / -1;
+
+        }
+
+        &--home-link {
+
+            @include button();
+            display : inline-block; // this makes the margins behave appropriately
+
+            color          : $black;
+            letter-spacing : 0.5px; 
+
+            background-image: $gray-gradient-left;
+
+            transition : all 0.3s ease-out;
+
+            &:hover {
+
+                background-image: $gray-gradient-left-hover;
+
+            }
+
+        } // end of home link
+
+    } // end of button
+
+    // main content
+    &--main{
+
+        display               : grid; // main grid
+        grid-template-rows    : min-content;
+        grid-template-columns : 2fr 1fr 1fr;
+        grid-gap              : 0 6.0rem; // row column
+        margin                : 4.0rem 0 0 0;
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-template-rows    : repeat( 2, min-content );
+            grid-template-columns : 1fr 1fr 1fr 1fr 1fr;
+            grid-gap              : 6.0rem 5.0rem;
+            grid-row              : 2 / 3;
+            grid-column           : 1 / -1;
+            margin                : 0;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-template-rows    : repeat( 3, min-content );
+            grid-template-columns : 1fr;
+            grid-gap              : 0 0;
+
+        }
+
+        &--col-1 {
+
+             @media all and ( max-width : $bp-1024 ) {
+
+                grid-row    : 1 / 2;
+                grid-column : 1 / 4;
+
+            }
+
+            @media all and ( max-width : $bp-768 ) {
+
+                grid-row    : 1 / 2; // had to specify the grid-row and grid-column in order to see
+                // the image
+                grid-column : 1 / 2;
+                margin      : 0 0 8.0rem 0; // make the margin larger between col 1 and col 2 for
+                // mobile devices
+        
+            }
+
+            @media all and ( max-width : $bp-375 ) {
+
+                 margin : 0 0 14.0vw 0;
+        
+            }
+
+            &--img {
+
+                display : block;
+
+            }
+
+        } // end of col 1
+
+        &--col-2 {
+
+            display            : grid; // sub grid or column 2 grid
+            grid-template-rows : repeat( 4, auto );
+            align-content      : start;           
+
+            @media all and ( max-width : $bp-1024 ) {
+
+                grid-row    : 1 / 2;
+                grid-column : 4 / 6;
+
+            }
+
+            @media all and ( max-width : $bp-768 ) {
+
+                grid-row    : 2 / 3;
+                grid-column : 1 / 2;
+                padding     : 2.0rem 2.0rem 0 2.0rem;
+
+                // background : $gray-200;
+                background : $gray-gradient-right;
+        
+            }
+
+            &--name {
+
+                grid-row : 1 / 2;
+                padding  : 0 0 2.0rem 0;
+                
+                border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+                font-size      : 2.4rem;
+                text-transform : uppercase;
+
+                @media all and ( max-width : $bp-1024 ) {
+
+                    padding : 0 0 3.0vw 0;
+            
+                }                
+
+                @media all and ( max-width : $bp-920 ) {
+
+                    padding : 0 0 2.4vw 0;
+            
+                }
+
+                @media all and ( max-width : $bp-768 ) {
+
+                    padding : 0 0 3.0vw 0;
+
+                }
+
+                @media all and ( max-width : $bp-480 ) {
+
+                    padding : 0 0 3.6vw 0;
+            
+                }
+
+            } // end of name
+
+            &--rating {
+
+                grid-row : 2 / 3;
+                padding  : 2.0rem 0 2.0rem 0;
+
+                border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+                @media all and ( max-width : $bp-1024 ) {
+
+                    padding : 3.0vw 0 3.0vw 0;
+            
+                }
+
+                @media all and ( max-width : $bp-920 ) {
+
+                    padding : 2.4vw 0 2.4vw 0;
+            
+                }
+
+                @media all and ( max-width : $bp-768 ) {
+
+                    padding : 3.0vw 0 3.0vw 0;
+            
+                }
+
+                @media all and ( max-width : $bp-480 ) {
+
+                    padding : 3.6vw 0 3.6vw 0;
+            
+                }
+
+            } // end of rating
+
+            &--price {
+
+                grid-row : 3 / 4;
+                padding   : 2.0rem 0 2.0rem 0;
+
+                border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+
+                @media all and ( max-width : $bp-1024 ) {
+
+                    padding : 3.0vw 0 3.0vw 0;
+            
+                }
+
+                @media all and ( max-width : $bp-920 ) {
+
+                    padding : 2.4vw 0 2.4vw 0;
+            
+                }
+
+                @media all and ( max-width : $bp-768 ) {
+
+                    display : none; // hide the price for mobile devices since we have the price
+                    // listed right below in column 3
+                    padding : 3.0vw 0 3.0vw 0;
+            
+                }
+
+                @media all and ( max-width : $bp-480 ) {
+
+                    padding : 3.6vw 0 3.6vw 0;
+            
+                }
+
+            } // end of price
+
+            &--description {
+
+                grid-row : 4 / 5;
+                padding  : 2.0rem 0 0 0;
+
+                @media all and ( max-width : $bp-1024 ) {
+
+                    padding : 3.0vw 0 0 0;
+            
+                }
+
+                @media all and ( max-width : $bp-920 ) {
+
+                    padding : 2.4vw 0 0 0;
+            
+                }
+
+                @media all and ( max-width : $bp-768 ) {
+                    
+                    grid-row : 3 / 4;
+                    padding  : 3.0vw 0 3.0vw 0;
+
+                    border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+            
+                }
+
+                @media all and ( max-width : $bp-480 ) {
+
+                    padding : 3.6vw 0 3.6vw 0;
+            
+                }
+
+            } // end of description
+
+        } // end of col 2
+
+        // price, status, quantity and an add to cart button
+        &--col-3 {
+
+            display               : grid; // sub grid or column 3 grid
+            grid-template-rows    : repeat( 3, min-content );
+            grid-template-columns : 1fr 1fr;                    
+            padding               : 1.0rem 2.0rem 1.0rem 2.0rem;
+
+            border : 1px solid rgba( 211, 211, 211, 1 );
+            
+            @media all and ( max-width : $bp-1024 ) {
+
+                grid-template-columns : 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-row              : 2 / 3;
+                grid-column           : 1 / 6;
+                padding               : 0 2.0rem 0 2.0rem;
+
+            }
+
+            @media all and ( max-width : $bp-768 ) {
+
+                grid-row    : 3 / 4;
+                grid-column : 1 / 2;
+
+                // background : $gray-200;
+                background : $gray-gradient-right;
+
+                border : none;
+        
+            }
+
+            @media all and ( max-width : $bp-620 ) {
+
+                grid-template-columns : 1.5fr 0.5fr 1fr 1fr 1fr 1fr;
+        
+            }
+
+            // price
+            &--row-1 {
+
+                display               : grid; // sub grid or column 3 row 1 grid
+                grid-template-columns : 1fr 1fr;
+                grid-row              : 1 / 2;
+                grid-column           : 1 / 3;
+                padding               : 2.4rem 0 2.4rem 0;
+    
+                border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+                @media all and ( max-width : $bp-1024 ) {
+
+                    display               : grid; // sub grid or column 3 row 1 price 1 & 2 grid
+                    grid-template-columns : 1fr 1fr 1fr 1fr 1fr 1fr;
+                    grid-row              : 1 / 2;
+                    grid-column           : 1 / 7;
+            
+                }
+
+                @media all and ( max-width : $bp-768 ) {
+
+                    padding : 3.0vw 0 3.0vw 0;
+
+                }
+
+                @media all and ( max-width : $bp-620 ) {
+
+                    grid-template-columns : 1.5fr 0.5fr 1fr 1fr 1fr 1fr;
+            
+                }
+
+                @media all and ( max-width : $bp-480 ) {
+
+                    padding : 3.6vw 0 3.6vw 0;
+            
+                }
+
+                &--price-1 {
+    
+                    grid-column : 1 / 2;
+
+                    @media all and ( max-width : $bp-620 ) {
+
+                        grid-column  : 1 / 2; // make the cell bigger as the window gets smaller
+                
+                    }
+
+                    @media all and ( max-width : $bp-480 ) {
+
+                        grid-column  : 1 / 3; // make the cell bigger as the window gets smaller
+                
+                    }
+
+                }
+
+                &--price-2 {
+
+                    grid-column : 2 / 3;
+
+                    @media all and ( max-width : $bp-620 ) {
+
+                        grid-column  : 2 / 3; // make the cell bigger as the window gets smaller
+                
+                    }
+
+                    @media all and ( max-width : $bp-480 ) {
+
+                        grid-column  : 3 / 6; // make the cell bigger as the window gets smaller
+                
+                    }
+
+                }
+
+            } // end of row 1
+
+            // status
+            &--row-2 {
+
+                display               : grid; // sub grid or column 3 row 2 grid
+                grid-template-columns : 1fr 1fr;
+                grid-row              : 2 / 3;
+                grid-column           : 1 / 3;
+                padding               : 2.4rem 0 2.4rem 0;
+    
+                border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+                @media all and ( max-width : $bp-1024 ) {
+
+                    display               : grid; // sub grid or column 3 row 2 status 1 & 2 grid
+                    grid-template-columns : 1fr 1fr 1fr 1fr 1fr 1fr;
+                    grid-row              : 2 / 3;
+                    grid-column           : 1 / 7;
+            
+                }
+
+                @media all and ( max-width : $bp-768 ) {
+
+                    padding : 3.0vw 0 3.0vw 0;
+            
+                }
+
+                @media all and ( max-width : $bp-620 ) {
+
+                    grid-template-columns : 1.5fr 0.5fr 1fr 1fr 1fr 1fr;
+            
+                }
+
+
+                @media all and ( max-width : $bp-480 ) {
+
+                    padding : 3.6vw 0 3.6vw 0;
+            
+                }
+
+                &--status-1 {
+
+                    grid-column : 1 / 2;
+
+                    @media all and ( max-width : $bp-620 ) {
+
+                        grid-column  : 1 / 2; // make the cell bigger as the window gets smaller
+                
+                    }
+
+                    @media all and ( max-width : $bp-480 ) {
+
+                        grid-column  : 1 / 3; // make the cell bigger as the window gets smaller
+                
+                    }
+
+                } // end of status 1
+
+                &--status-2 {
+
+                    grid-column : 2 / 3;
+
+                    @media all and ( max-width : $bp-620 ) {
+
+                        grid-column  : 2 / 5; // make the cell bigger as the window gets smaller
+                
+                    }
+
+                    @media all and ( max-width : $bp-480 ) {
+
+                        grid-column  : 3 / 6; // make the cell bigger as the window gets smaller
+                
+                    }
+
+                } // end of status 2
+
+            } // end of row 2
+
+            // quantity
+            &--row-3 {
+
+                display               : grid; // sub grid or column 3 row 3 grid
+                grid-template-columns : 1fr 1fr;
+                grid-row              : 3 / 4;
+                grid-column           : 1 / 3;
+                align-items           : center;
+                padding               : 2.4rem 0 2.4rem 0;
+
+                border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+                @media all and ( max-width : $bp-1024 ) {
+
+                    display               : grid; // sub grid or column 3 row 2 status 1 & 2 grid
+                    grid-template-columns : 1fr 1fr 1fr 1fr 1fr 1fr;
+                    grid-row               : 3 / 4;
+                    grid-column            : 1 / 7;
+            
+                }
+                
+                @media all and ( max-width : $bp-768 ) {
+
+                    padding : 3.0vw 0 3.0vw 0;
+
+                    // border : none;
+            
+                }
+
+                @media all and ( max-width : $bp-620 ) {
+
+                    grid-template-columns : 1.5fr 0.5fr 1fr 1fr 1fr 1fr;
+            
+                }
+
+                @media all and ( max-width : $bp-480 ) {
+
+                    padding : 3.6vw 0 3.6vw 0;
+            
+                }
+            
+                &--quanity-1 { // row 3 column 1
+
+                    grid-column : 1 / 2;
+
+                    @media all and ( max-width : $bp-620 ) {
+
+                        grid-column  : 1 / 2; // make the cell bigger as the window gets smaller
+                
+                    }
+
+                    @media all and ( max-width : $bp-480 ) {
+
+                        grid-column  : 1 / 3; // make the cell bigger as the window gets smaller
+                
+                    }
+
+                } // end of quantity 1
+
+                &--select-1 { // row 3 column 2
+
+                    grid-column : 2 / 3;
+                    width       : 75%;
+                    padding     : 0.5rem 2.0rem;
+            
+                    border        : 1px solid rgba( 230, 230, 230, 1 );
+                    border-radius : 4px;
+            
+                    font-family : $font-primary-1;
+                    font-size   : 1.5rem;
+                    font-weight : 300;
+                    color       : $gray-900;
+                    line-height : 1.6;
+            
+                    background : $gray-300;
+            
+                    // from stackoverflow: "Each link has five different states: link, hover, active,
+                    // focus and visited.
+            
+                    // Link is the normal appearance, hover is when you mouse over, active is the
+                    // state when it's clicked, focus follows active and visited is the state you end
+                    // up when you unfocus the recently clicked link.
+            
+                    // remove the blue outline that is around the select element after selecting a
+                    // new value
+                    &:focus {
+
+                        outline : none;
+
+                    }
+
+                    @media all and ( max-width : $bp-1280 ) {
+
+                        font-size : 100%; // had to manually set the font size on the select element 
+                
+                    }
+
+                    @media all and ( max-width : $bp-768 ) {
+
+                        grid-column : 2 / 4; // make the cell bigger as the window gets smaller
+                        width       : 50%;
+
+                        background : $gray-335;
+                
+                    }
+
+                    @media all and ( max-width : $bp-620 ) {
+
+                        grid-column : 2 / 5; // make the cell bigger as the window gets smaller
+                
+                    }
+
+                    @media all and ( max-width : $bp-480 ) {
+
+                        grid-column : 3 / 6; // make the cell bigger as the window gets smaller
+                        width       : 75%;
+                
+                    }
+
+                } // end of select 1
+
+            } // end of row 3
+
+            // add to cart button
+            &--row-4 {
+
+                grid-row    : 4 / 5;
+                grid-column : 1 / 3;
+                padding     : 2.4rem 0 2.4rem 0;
+
+                @media all and ( max-width : $bp-1024 ) {
+
+                    grid-row    : 4 / 5;
+                    grid-column : 1 / 7;
+            
+                }
+
+                @media all and ( max-width : $bp-768 ) {
+
+                    padding : 4.0vw 0 4.0vw 0; // give the button more spacing here and the
+                    // background will be automatically white
+            
+                }
+
+                @media all and ( max-width : $bp-620 ) {
+
+                    padding : 4.5vw 0 4.5vw 0; // give the button more spacing here
+            
+                }
+
+                @media all and ( max-width : $bp-480 ) {
+
+                    padding : 5.0vw 0 5.0vw 0; // give the button more spacing here
+            
+                }
+
+                &--btn {
+
+                    @include button();
+
+                    display : block; // this makes the button span the element
+
+                    letter-spacing : 1px;
+
+                }
+
+                // disable the link if we are out of stock
+                &--btn-disable {
+
+                    @include button();
+
+                    display : block; // this makes the button span the element
+
+                    letter-spacing : 1px;
+
+                    pointer-events : none; // disable the link if we are out of stock
+
+                }
+
+            } // end of row 4
+
+        } // end of col 3
+
+    } // end of main
+
+    // review section
+    &--reviews {
+
+        display               : grid;
+        grid-template-rows    : repeat( 2, min-content );
+        grid-template-columns : 0.5fr;
+        grid-gap              : 8.0rem 0;
+        width                 : 100%;
+        margin                : 12.0rem 0 0 0;
+        padding               : 4.0rem;
+
+        border : 1px solid rgba( 211, 211, 211, 1 );
+
+        @media all and ( max-width : $bp-1024 ) {
+
+            grid-row    : 3 / 4;
+            grid-column : 1 / -1;
+            margin      : 6.0rem 0 0 0;
+    
+        }
+
+        @media all and ( max-width : $bp-920 ) {
+
+            grid-template-columns : 0.6fr;
+    
+        }
+
+        @media all and ( max-width : $bp-768 ) {
+
+            grid-template-columns : 0.8fr;
+    
+        }
+
+        @media all and ( max-width : $bp-620 ) {
+
+            grid-template-columns : 1fr;
+    
+        }
+
+        &--row-1 {
+
+            display  : grid;
+            grid-gap : 3.0rem 0;
+
+            &--title {
+
+                margin  : 0;
+                padding : 0 0 1.0rem 0;
+
+                border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+                font-family    : $font-primary-1;
+                font-size      : 2.4rem;
+                font-weight    : 300;
+                color          : $gray-800;
+                letter-spacing : 1px;
+
+            } // end of title
+
+        } // end of row-1
+
+        &--row-2 {
+
+            display  : grid;
+            grid-gap : 3.0rem 0;
+
+            &--title {
+
+                margin  : 0;
+                padding : 0 0 1.0rem 0;
+
+                border-bottom : 1px solid rgba( 211, 211, 211, 1 );
+
+                font-family    : $font-primary-1;
+                font-size      : 2.4rem;
+                font-weight    : 300;
+                color          : $gray-800;
+                letter-spacing : 1px;
+
+            }
+
+            // rating
+            &--form {
+
+                padding : 0;
+
+                &--select {
+
+                    margin : 1.0rem 0 4.0rem 0;
+            
+                    &--label {
+
+                        display : block;
+
+                        font-weight : 400;
+                        color       : $gray-650;
+
+                    } // end of label
+
+                    &--element {
+
+                        width       : 18.0rem;
+                        margin      : 1.0rem 0 0 0;
+                        padding     : 0.5rem 2.0rem;
+                
+                        border        : 1px solid rgba( 230, 230, 230, 1 );
+                        border-radius : 4px;
+
+                        font-family : $font-primary-1;
+                        font-size   : 1.5rem;
+                        font-weight : 300;
+                        color       : $gray-900;
+
+                        // font-weight : 400;
+                        // color       : $gray-650;
+
+                        background : $gray-300;
+
+                        // from stackoverflow: "Each link has five different states: link, hover, active,
+                        // focus and visited.
+                
+                        // Link is the normal appearance, hover is when you mouse over, active is the
+                        // state when it's clicked, focus follows active and visited is the state you end
+                        // up when you unfocus the recently clicked link.
+                
+                        // remove the blue outline that is around the select element after selecting a
+                        // new value
+                        &:focus {
+
+                            outline : none;
+
+                        }
+
+                        @media all and ( max-width : $bp-1280 ) {
+
+                            font-size : 100%; // had to manually set the font size on the select element 
+                    
+                        }
+
+                    } // end of element
+
+                } // end of select
+
+                &--button-container {
+
+                    display  : grid;
+        
+                    &--button {
+                        @include button();
+                        // display : block; // this makes the button span the element
+                        margin  : 1.0rem 0 0 0;
+            
+                        letter-spacing : 1px;
+
+                    }
+        
+                } // end of button-container
+
+            } // end of form            
+
+        } // end of row-2
+
+    } // end of reviews
+
+} // end of product screen

@@ -1,0 +1,68 @@
+
+// in order to use the sass variables in base.scss, I had to use @import "";
+@import "../../base.styles.scss";
+
+
+.product-card {
+
+    margin  : 3.0rem 0 3.0rem 0;
+    padding : 2.0rem;
+
+    border : rgba( 204, 204, 204, 1 ) 1px dotted;
+
+    color : $gray-700;
+
+    overflow : hidden; // part 1 of the hover animation effect
+
+    &--link {
+
+        display            : grid;
+        grid-template-rows : min-content;
+
+        overflow : hidden; // part 1 of the hover animation effect
+
+        &--img {
+
+            display : block; // remove white space below image
+
+            &:hover {
+
+                transform  : scale( 1.1 ); // part 2 of the hover animation effect
+                transition : transform 6s cubic-bezier( 0.25, 0.45, 0.45, 0.95 ); // part 3
+                // of the hover animation effect
+
+            }
+
+        }
+
+        &--title {
+
+            margin : 2.4rem 0 0 0;
+
+            font-weight : 400;
+            color       : $gray-900;
+
+        }
+
+    } // end of link
+
+    &--rating {
+
+        margin : 0.8rem 0 0 0;
+
+        font-size   : 1.5rem;
+        font-weight : 400;
+        color       : $gray-700;
+
+    } // end of rating
+
+    &--price {
+
+        margin : 0.8rem 0 0 0;
+
+        font-weight : 400;
+        color       : $gray-800;
+
+    } // end of price
+
+} // end of product card
