@@ -1787,9 +1787,7 @@ const productList = asyncHandler( async( req, res ) => {
 
     // before we get " products " below we need to get the total count of products and to
     // get the total count of products we will use the countDocuments method on the Product model
-    const count = 3;
-    
-    // await Product.countDocuments( { ...keyword } )
+    const count = await Product.countDocuments( { ...keyword } )
 
     // ==============================
     // Step 3 Pagination Functionality - limit by page size and skip any products that come before
