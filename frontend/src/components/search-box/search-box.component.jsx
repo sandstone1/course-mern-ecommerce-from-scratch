@@ -135,12 +135,19 @@ export default SearchBox;
 // at the beginning of lecture 86, given all the notes, I created a new file below without
 // the notes so we are starting fresh
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './search-box.styles.scss';
 
 
 const SearchBox = ( { history } ) => {
+
+    // ==============================
+    // Define URL
+    // ==============================
+
+    // remember we had to define this const here and not in the useEffect(); hook
+    const url = window.location.href;
 
     // ==============================
     // Component State
@@ -155,6 +162,18 @@ const SearchBox = ( { history } ) => {
     // ==============================
     // useEffect();
     // ==============================
+
+    useEffect( () => {
+
+        // if the url equal the home page then reset the keyword to an empty string
+        if ( url === 'http://localhost:3008/' || url === 'https://proshop-sandstone.herokuapp.com/' ) {
+
+            // reset the keyword
+            setKeyword( '' );
+
+        } // end of if statement
+
+    }, [ url ] ); // end of useEffect
 
     // ==============================
     // handleSubmit function
@@ -190,6 +209,7 @@ const SearchBox = ( { history } ) => {
                     name="keyword"
                     type="text"
                     // placeholder="Search Products..."
+                    value={ keyword }
                     onChange={ (e) => setKeyword( e.target.value ) }
                 />
 
