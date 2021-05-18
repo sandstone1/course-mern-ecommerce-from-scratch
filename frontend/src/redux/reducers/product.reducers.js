@@ -1887,6 +1887,7 @@ export const productListReducer = ( state = INITIAL_STATE_REDUCER_1, action ) =>
                 error   : action.payload
             };
 
+
         default :
             return state;
 

@@ -435,6 +435,8 @@ const CartItem = ( { cartItem } ) => {
 
                 </select>
 
+                { /* <i className="fas fa-chevron-down cart-item--quantity--fa-chevron-down"></i> */ }
+
             </div>
 
             { /* column 5 - delete cart item */ }

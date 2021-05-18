@@ -2370,7 +2370,7 @@ const ProductScreen = ( { match } ) => {
                                         onChange={ ( e ) => setRating( e.target.value ) }                                    
                                         className="product-screen--reviews--row-2--form--select--element"
                                     >
-                                        <option value="">Select...</option>
+                                        <option value="">Select</option>
                                         <option value="1">1 - Poor</option>
                                         <option value="2">2 - Fair</option>
                                         <option value="3">3 - Good</option>

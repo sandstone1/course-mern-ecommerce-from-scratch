@@ -177,9 +177,13 @@
         }
 
     } // end of price
-
+        
     // quantity
     &--quantity {
+
+        // to make the select element work accross all browsers I made the following 3 changes:
+        // select change 1
+        // position : relative;
 
         @media all and ( max-width : $bp-1024 ) {
 
@@ -212,12 +216,46 @@
     
         }
 
+
+        /*
+        &::after {
+
+            position : absolute;
+            top      : 1.3rem; // 36 - 12 = 24 / 2 = 12px but 12px looked high to me so I went with 1.3rem
+            right    : 0.8rem;
+
+            display        : inline-block;
+            padding-right  : 3px;
+            vertical-align : middle;
+
+            font-family : "FontAwesome";
+            font-weight : 900;
+
+            content : "\f078";
+
+        }
+        */
+
+        /*
+        // select change 2
+        &--fa-chevron-down {
+
+            position : absolute;
+            top      : 1.3rem; // 36 - 12 = 24 / 2 = 12px but 12px looked high to me so I went with 1.3rem
+            right    : 0.8rem;
+
+            font-size : 1.2rem;
+            color     : $gray-900;
+
+        }
+        */
+
     } // end of quantity
 
     // quantity select
     &--quantity--select {
 
-        width   : 100%;
+        width   : 90px;
         padding : 0.5rem 3.0rem;
 
         border        : 1px solid rgba( 230, 230, 230, 1 );
@@ -229,7 +267,22 @@
         color       : $gray-900;
         line-height : 1.6;
 
-        background : $gray-300;
+
+        // select change 3
+        // in order to get the select element to work in Sarafi I had to add the following code
+        -webkit-appearance : none;
+        -moz-appearance    : none;
+        // appearance      : none;
+        // background      : url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%238C98F2'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
+        // for the fill color we had to put %23 before the hex color code in order to use the hex color code
+        background          : url( "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><polygon fill='%23696969' points='0,0 100,0 50,50'/></svg>" );
+        background-size     : 12px;
+        // background-position : calc(100% - 20px) center;
+        background-position : right 0.8rem top 68%;
+        background-repeat   : no-repeat;
+        // background-color : #efefef;
+        background-color    : $gray-300;
+
 
         // from stackoverflow: "Each link has five different states: link, hover, active,
         // focus and visited.

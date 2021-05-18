@@ -1349,6 +1349,7 @@ import SkeletonHomeScreen from
 // import in the ErrorMessage component
 import ErrorMessage from '../../components/message/error-message.component';
 
+
 import './home-screen.styles.scss';
 
 
@@ -1425,8 +1426,12 @@ const HomeScreen = ( { match } ) => {
                     <div className="home-screen--button">
             
                         { /* home page button */ }
-                        <Link to="/" className="home-screen--button--home-link">Return to Home Page</Link>
-                        
+                        <Link
+                            to="/"
+                            className="home-screen--button--home-link"
+                        >
+                            Return to Home Page
+                        </Link>
 
                     </div>
 

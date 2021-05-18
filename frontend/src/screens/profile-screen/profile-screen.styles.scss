@@ -226,11 +226,12 @@
                 }
             
                 &:nth-child( odd ) {
-            
-                    background-image: $gray-gradient-right;
+
+                    // I had to change this for Safari in order for it to work correctly
+                    background: $gray-225;
             
                 }
-            
+
                 &:nth-child( odd ):hover {
             
                     background : $gray-200;

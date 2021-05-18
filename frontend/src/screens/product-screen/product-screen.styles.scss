@@ -13,7 +13,7 @@
 
     @media all and ( max-width : $bp-1024 ) {
 
-        grid-gap  : 8.0rem 0; // row column
+        grid-gap  : 6.0rem 0; // row column
 
     }
 
@@ -527,20 +527,28 @@
                 &--select-1 { // row 3 column 2
 
                     grid-column : 2 / 3;
-                    width       : 75%;
-                    padding     : 0.5rem 2.0rem;
-            
+                    width       : 90px; // in this case, I found 90px worked better than 9.0rem
+                    padding     : 0.5rem 3.0rem;
+
                     border        : 1px solid rgba( 230, 230, 230, 1 );
                     border-radius : 4px;
-            
+
                     font-family : $font-primary-1;
                     font-size   : 1.5rem;
                     font-weight : 300;
                     color       : $gray-900;
                     line-height : 1.6;
-            
-                    background : $gray-300;
-            
+
+                    // in order to get the select element to work in Sarafi / Firefox I had to add the following code
+                    -webkit-appearance : none;
+                    -moz-appearance    : none;
+                    // for the fill color we had to put %23 before the hex color code in order to use the hex color code
+                    background          : url( "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><polygon fill='%23808080' points='0,0 100,0 50,50'/></svg>" );
+                    background-size     : 12px;
+                    background-position : right 0.8rem top 68%;
+                    background-repeat   : no-repeat;
+                    background-color    : $gray-300;
+
                     // from stackoverflow: "Each link has five different states: link, hover, active,
                     // focus and visited.
             
@@ -558,16 +566,23 @@
 
                     @media all and ( max-width : $bp-1280 ) {
 
-                        font-size : 100%; // had to manually set the font size on the select element 
+                        width : 85%;
+
+                        font-size : 100%; // had to manually set the font size on the select element
                 
+                    }
+
+                    @media all and ( max-width : $bp-1024 ) {
+
+                        width : 90px;
+
                     }
 
                     @media all and ( max-width : $bp-768 ) {
 
                         grid-column : 2 / 4; // make the cell bigger as the window gets smaller
-                        width       : 50%;
 
-                        background : $gray-335;
+                        background-color    : $gray-335;
                 
                     }
 
@@ -580,7 +595,6 @@
                     @media all and ( max-width : $bp-480 ) {
 
                         grid-column : 3 / 6; // make the cell bigger as the window gets smaller
-                        width       : 75%;
                 
                     }
 
@@ -689,6 +703,7 @@
     
         }
 
+        // product reviews
         &--row-1 {
 
             display  : grid;
@@ -711,6 +726,7 @@
 
         } // end of row-1
 
+        // write a customer review
         &--row-2 {
 
             display  : grid;
@@ -754,7 +770,7 @@
                         width       : 18.0rem;
                         margin      : 1.0rem 0 0 0;
                         padding     : 0.5rem 2.0rem;
-                
+
                         border        : 1px solid rgba( 230, 230, 230, 1 );
                         border-radius : 4px;
 
@@ -762,11 +778,17 @@
                         font-size   : 1.5rem;
                         font-weight : 300;
                         color       : $gray-900;
+                        line-height : 1.6;
 
-                        // font-weight : 400;
-                        // color       : $gray-650;
-
-                        background : $gray-300;
+                        // in order to get the select element to work in Sarafi / Firefox I had to add the following code
+                        -webkit-appearance : none;
+                        -moz-appearance    : none;
+                        // for the fill color we had to put %23 before the hex color code in order to use the hex color code
+                        background          : url( "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><polygon fill='%23808080' points='0,0 100,0 50,50'/></svg>" );
+                        background-size     : 12px;
+                        background-position : right 0.8rem top 68%;
+                        background-repeat   : no-repeat;
+                        background-color    : $gray-300;
 
                         // from stackoverflow: "Each link has five different states: link, hover, active,
                         // focus and visited.
@@ -785,7 +807,9 @@
 
                         @media all and ( max-width : $bp-1280 ) {
 
-                            font-size : 100%; // had to manually set the font size on the select element 
+                            font-size : 100%; // had to manually set the font size on the select element
+
+                            background-position : right 0.8rem top 74%;
                     
                         }
 
