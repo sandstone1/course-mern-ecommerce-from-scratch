@@ -2129,7 +2129,7 @@ const ProductScreen = ( { match } ) => {
             // reset comment to an empty string
             setComment( '' ); 
 
-            // reset the product create review state so we don't end up in an infinate
+            // reset the product create review state so we don't end up in an infinite
             // loop
             dispatch( { type : PRODUCT_CREATE_REVIEW_RESET } );
 

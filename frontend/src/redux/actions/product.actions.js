@@ -3139,7 +3139,8 @@ import {
     PRODUCT_UPDATE_ADMIN_FAIL,
     PRODUCT_CREATE_REVIEW_REQUEST,
     PRODUCT_CREATE_REVIEW_SUCCESS,
-    PRODUCT_CREATE_REVIEW_FAIL
+    PRODUCT_CREATE_REVIEW_FAIL,
+    PRODUCT_CREATE_REVIEW_RESET
 } from '../constants/product.constants';
 
 
@@ -3193,6 +3194,10 @@ export const productListActionCreator = ( keyword = '', pageNumber = '' ) => asy
             type    : PRODUCT_LIST_SUCCESS,
             payload : data
         } );
+
+        // reset the product review object so that a user can go back to the same product a
+        // second time and the error will be gone
+        dispatch( { type: PRODUCT_CREATE_REVIEW_RESET } );
 
     } catch ( error ) {
 
